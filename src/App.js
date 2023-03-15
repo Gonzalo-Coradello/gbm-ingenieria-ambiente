@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import styled from 'styled-components';
+
+const Button = styled.button`
+  padding: 0.3em 1em;
+  margin: 2rem;
+  background-color: slateblue;
+  color: white;
+  border-radius: 5px;
+`
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>GBM Ingeniería y Ambiente</h1>
+      <Button>Botón con styled components</Button>
+      <button type='button' className='btn btn-success'>Botón con Bootstrap</button>
     </div>
   );
 }
