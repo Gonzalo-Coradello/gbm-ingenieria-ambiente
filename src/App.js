@@ -15,7 +15,7 @@ function App() {
       <h1>GBM Ingeniería y Ambiente</h1>
       <Button>Botón con styled components</Button>
       <button type="button" className="btn btn-success">
-        Botón con Bootstrap 5
+        Botón con Bootstrap V
       </button>
     </div>
   );
