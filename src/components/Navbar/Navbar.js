@@ -11,6 +11,7 @@ const Navbar = () => {
         {ref: "#servicios", slug: "Servicios"},
         {ref: "#contacto", slug: "Contacto"}
     ]
+    
   return (
     <header>
       <nav className='container-lg py-3 px-3 d-flex justify-content-between align-items-sm-center'>
@@ -46,7 +47,6 @@ const Navbar = () => {
             </ul>
         </div>
       </nav>
-
     </header>
   )
 }
