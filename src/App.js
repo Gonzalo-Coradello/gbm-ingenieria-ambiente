@@ -31,7 +31,7 @@ function App() {
       <button type="button" className="btn btn-success">
         Botón con Bootstrap 4
       </button>
-     
+      Prueba
     </div>
   );
 }
