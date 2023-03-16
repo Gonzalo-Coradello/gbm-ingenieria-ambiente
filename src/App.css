@@ -13,6 +13,13 @@
   src: url(./assets/fonts/MullerMedium.ttf);
 }
 
+/* Custom properties */
+:root {
+  --green: #0C5B28;
+  --yellow: #FBBC04;
+  --gray: #999EA3;
+}
+
 * {
 box-sizing: border-box;
 margin: 0;
@@ -21,8 +28,56 @@ text-decoration: none;
 list-style: none;
 }
 
-h1 {
+body {
   font-family: MullerRegular;
+}
+
+h1 {
+  font-family: MullerExtraBold;
+}
+
+h2,
+h3,
+h4,
+li {
+  font-family: MullerMedium;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  transition: all 300ms;
+}
+
+a:hover {
+  opacity: .5;
+}
+
+/* Clases con los colores de la marca */
+.clr-green {
+  color: var(--green);
+}
+
+.bg-green {
+  background-color: var(--green);
+  color: #FFF;
+}
+
+.clr-yellow {
+  color: var(--yellow);
+}
+
+.bg-yellow {
+  background-color: var(--yellow);
+  color: #000;
+}
+.clr-gray {
+  color: var(--gray);
+}
+
+.bg-gray {
+  background-color: var(--gray);
+  color: #000;
 }
 
 .bor-1r {
