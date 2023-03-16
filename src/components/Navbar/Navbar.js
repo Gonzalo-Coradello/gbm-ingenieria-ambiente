@@ -6,10 +6,14 @@ const Navbar = () => {
 
     const [openMenu, setOpenMenu] = useState(false)
 
-  const navbarLinks = ["Quiénes somos", "Servicios", "Contacto"]
+  const navbarLinks = [
+        {ref: "#about", slug: "Quiénes somos"},
+        {ref: "#servicios", slug: "Servicios"},
+        {ref: "#contacto", slug: "Contacto"}
+    ]
   return (
     <header>
-      <nav className='container-lg pt-2 px-3 d-flex justify-content-between align-items-sm-center'>
+      <nav className='container-lg py-3 px-3 d-flex justify-content-between align-items-sm-center'>
         <Logo />
 
         {/* Menu mobile */}
@@ -22,8 +26,8 @@ const Navbar = () => {
             <div className={`position-fixed fixed-top-0 d-flex flex-column align-items-end ${openMenu ? 'nav__menu active' : 'nav__menu'}`}>
                 <ul className='pt-2 px-3 text-end'>
                     {navbarLinks.map(link => (
-                        <li>
-                            <a href="#" className='clr-green' onClick={() => setOpenMenu(false)}>{link}</a>
+                        <li key={link.ref}>
+                            <a href={link.ref} className='clr-green' onClick={() => setOpenMenu(false)}>{link.slug}</a>
                         </li>
                     ))}
                 </ul>
@@ -35,8 +39,8 @@ const Navbar = () => {
         <div className="d-none d-sm-flex pt-2">
             <ul className='d-flex gap-4'>
                 {navbarLinks.map(link => (
-                    <li>
-                        <a href="#" className='clr-green' onClick={() => setOpenMenu(false)}>{link}</a>
+                    <li key={link.ref}>
+                        <a href={link.ref} className='clr-green' onClick={() => setOpenMenu(false)}>{link.slug}</a>
                     </li>
                 ))}
             </ul>
