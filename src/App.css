@@ -32,11 +32,11 @@ body {
   font-family: MullerRegular;
 }
 
-h1 {
+h1,
+h2 {
   font-family: MullerExtraBold;
 }
 
-h2,
 h3,
 h4,
 li {
