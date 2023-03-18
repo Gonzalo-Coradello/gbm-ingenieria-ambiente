@@ -26,9 +26,10 @@ margin: 0;
 padding: 0;
 text-decoration: none;
 list-style: none;
+/* border: 0 !important; */
 }
 
-body {
+body{
   font-family: MullerRegular;
 }
 
@@ -39,7 +40,7 @@ h2 {
 
 h3,
 h4,
-li {
+li, button {
   font-family: MullerMedium;
 }
 
@@ -75,10 +76,15 @@ a:hover {
   color: var(--gray);
 }
 
+.clr-white {
+color: #ffffff;
+}
+
 .bg-gray {
   background-color: var(--gray);
   color: #000;
 }
+
 
 .bor-1r {
 border: 1px solid red;
