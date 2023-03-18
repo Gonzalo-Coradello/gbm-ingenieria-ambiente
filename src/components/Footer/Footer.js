@@ -86,7 +86,7 @@ function Footer() {
         </div>
       </FooterBox>
       <div className="col-12 d-flex justify-content-center pt-4">
-        <p className="p-0 m-0 col-6 text-center">GBM © 2023</p>
+        <p className="p-0 m-0 col-6 text-center">GBM © 2023 </p>
       </div>
     </StyledFooter>
   );
