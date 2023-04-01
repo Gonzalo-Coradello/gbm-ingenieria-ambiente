@@ -54,6 +54,19 @@ a:hover {
   opacity: .5;
 }
 
+/* Fuentes */
+.font-regular {
+  font-family: MullerRegular;
+}
+
+.font-bold {
+  font-family: MullerExtraBold;
+}
+
+.font-medium {
+  font-family: MullerMedium;
+}
+
 /* Clases con los colores de la marca */
 .clr-green {
   color: var(--green);
