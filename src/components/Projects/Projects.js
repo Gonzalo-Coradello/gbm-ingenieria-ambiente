@@ -64,11 +64,10 @@ const Projects = () => {
 };
 
 const Heading = styled.h2`
-  font-size: 1.5rem;
+  font-size: 36px;
   color: var(--green);
   text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.8rem;
 `;
 
 const RoundImg = styled.div`
