@@ -1,8 +1,7 @@
 import React from "react";
-import Logo from "../Logo/Logo";
 import { AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
 import { FaLinkedinIn, FaFacebookF } from "react-icons/fa";
-import MainButton from "../Buttons/MainButton";
+import MainButton from "../../components/Buttons/MainButton"
 import styled from "styled-components";
 import logo from "./assets/white-logo.png";
 

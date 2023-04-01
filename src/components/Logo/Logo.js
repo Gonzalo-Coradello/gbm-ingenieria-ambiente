@@ -5,10 +5,7 @@ const Logo = ({ width = 148 }) => (
     width={width}
     src={logo}
     alt="GBM Ingeniería y Ambiente"
-    className="bor-1b"
   />
 );
-
-// Puse el borde del logo para ver su espacio. Att Gonza Ramos
 
 export default Logo;
