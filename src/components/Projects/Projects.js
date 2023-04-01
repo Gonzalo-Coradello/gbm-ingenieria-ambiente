@@ -4,32 +4,6 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import styled from "styled-components";
 
-const Heading = styled.h2`
-  font-size: 1.5rem;
-  color: var(--green);
-  text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-`;
-
-const RoundImg = styled.div`
-  width: 125px;
-  img {
-    border-radius: 100%;
-    width: 100%;
-  }
-
-  @media screen and (min-width: 415px) {
-    width: 150px;
-  }
-`;
-
-const Container = styled.div`
-  max-width: 1200px;
-  width: 80%;
-  margin-inline: auto;
-`;
-
 const images = [
   { src: "http://placekitten.com/300/300", alt: "img1" },
   { src: "http://placekitten.com/300/300", alt: "img2" },
@@ -41,6 +15,8 @@ const images = [
   { src: "http://placekitten.com/300/300", alt: "img8" },
   { src: "http://placekitten.com/300/300", alt: "img9" },
   { src: "http://placekitten.com/300/300", alt: "img10" },
+  { src: "http://placekitten.com/300/300", alt: "img11" },
+  { src: "http://placekitten.com/300/300", alt: "img12" }
 ];
 
 const Projects = () => {
@@ -70,7 +46,7 @@ const Projects = () => {
             loopedSlides: 4,
           },
           1200: {
-            slidesPerView: 5,
+            slidesPerView: 5.5,
             loopedSlides: 5,
           },
         }}
@@ -86,5 +62,30 @@ const Projects = () => {
     </Container>
   );
 };
+
+const Heading = styled.h2`
+  font-size: 1.5rem;
+  color: var(--green);
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+`;
+
+const RoundImg = styled.div`
+  width: 125px;
+  img {
+    border-radius: 100%;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 415px) {
+    width: 150px;
+  }
+`;
+
+const Container = styled.div`
+  max-width: 1200px;
+  margin-inline: auto;
+`;
 
 export default Projects;
