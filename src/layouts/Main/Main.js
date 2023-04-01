@@ -4,18 +4,28 @@ import Team from "../../components/Team/Team"
 import Projects from "../../components/Projects/Projects"
 import Services from "../../components/Services/Services"
 import Form from "../../components/Form/Form"
+import styled from "styled-components"
 
 const Main = () => {
   return (
-    <main>
+    <StyledMain>
       <Hero />
       <About />
       <Team />
       <Projects />
       <Services />
       <Form />
-    </main>
+    </StyledMain>
   )
 }
+
+const StyledMain = styled.main`
+    max-width: 1110px;
+    margin-inline: auto;
+    
+    & > * {
+        margin-top: 5rem;
+    }
+`
 
 export default Main
