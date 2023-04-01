@@ -24,7 +24,7 @@ const StyledMain = styled.main`
     margin-inline: auto;
     
     & > * {
-        margin-top: 5rem;
+        margin-bottom: 5rem;
     }
 `
 

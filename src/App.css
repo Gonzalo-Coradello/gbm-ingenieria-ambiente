@@ -1,4 +1,9 @@
 @font-face {
+  font-family: MullerLightItalic;
+  src: url(./assets/fonts/MullerLightItalic.ttf);
+}
+
+@font-face {
   font-family: MullerRegular;
   src: url(./assets/fonts/MullerRegular.ttf);
 }
@@ -55,6 +60,10 @@ a:hover {
 }
 
 /* Fuentes */
+.font-light-italic {
+  font-family: MullerLightItalic;
+}
+
 .font-regular {
   font-family: MullerRegular;
 }
