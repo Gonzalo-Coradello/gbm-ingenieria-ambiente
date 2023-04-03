@@ -11,12 +11,12 @@ const iconStyle = {
 
 const Form = () => {
   return (
-    <div className="bor-1r">
+    <div className="">
       <Heading>Contacto</Heading>
       <div className="col-12 d-flex">
-        <div className="bor-1g col-5 d-flex flex-column justify-content-center gap-4">
+        <div className="col-5 d-flex flex-column justify-content-center gap-4">
           <div className="text-center">
-            <h3>Recibe más información</h3>
+            <h3>Recibe más información.</h3>
             <h3>¡Contáctanos!</h3>
           </div>
           <div className="d-flex flex-column align-content-center gap-4 ps-5">
@@ -46,8 +46,8 @@ const Form = () => {
             </div>
           </div>
         </div>
-        <div className="col-7 bor-1b">
-          <form className="d-flex flex-column gap-3">
+        <div className="col-7">
+          <form className="d-flex flex-column gap-4">
             <div className="d-flex justify-content-between">
               <StyledInput type="text" placeholder="Nombre" className="col-5" />
               <StyledInput
