@@ -21,6 +21,7 @@
 /* Custom properties */
 :root {
   --green: #0C5B28;
+  --lightgreen: #0c5b28bd;
   --yellow: #FBBC04;
   --gray: #999EA3;
 }
@@ -109,17 +110,25 @@ color: #ffffff;
 
 
 .bor-1r {
-border: 1px solid red;
+border: 3px solid red;
 }
 
 .bor-1b {
-  border: 1px solid blue;
+  border: 3px solid blue;
+}
+
+.bor-1g {
+  border: 3px solid green;
 }
 
 .bor-2r {
-  border: 4px solid red;
+  border: 6px solid red;
 }
     
 .bor-2b {
-  border: 4px solid blue;
+  border: 6px solid blue;
+}
+
+.bor-2g {
+  border: 6px solid green;
 }
