@@ -1,7 +1,18 @@
+header,
+nav {
+    z-index: 999;
+}
+
+nav {
+    background-color: #FFFD;
+}
+
 .nav__menu {
     right: -100%;
     transition: 300ms;
     z-index: 30;
+    background-color: #FFFD;
+    margin-top: 2.55rem;
 }
 
 .nav__menu.active {
