@@ -27,7 +27,7 @@ const services = [
 
 const Services = () => {
   return (
-    <div>
+    <div id="servicios">
       <Heading>Servicios</Heading>
       <StyledDiv>
         {services.map((service) => (
