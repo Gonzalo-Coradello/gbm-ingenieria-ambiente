@@ -9,8 +9,8 @@
 }
 
 @font-face {
-  font-family: MullerExtraBold;
-  src: url(./assets/fonts/MullerExtraBold.ttf)
+  font-family: MullerBold;
+  src: url(./assets/fonts/MullerBold.ttf)
 }
 
 @font-face {
@@ -41,7 +41,7 @@ body{
 
 h1,
 h2 {
-  font-family: MullerExtraBold;
+  font-family: MullerBold;
 }
 
 h3,
@@ -60,6 +60,11 @@ a:hover {
   opacity: .5;
 }
 
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
 /* Fuentes */
 .font-light-italic {
   font-family: MullerLightItalic;
@@ -70,7 +75,7 @@ a:hover {
 }
 
 .font-bold {
-  font-family: MullerExtraBold;
+  font-family: MullerBold;
 }
 
 .font-medium {
@@ -108,6 +113,11 @@ color: #ffffff;
   color: #000;
 }
 
+#about,
+#servicios,
+#contacto {
+  scroll-margin-top: 85px;
+}
 
 .bor-1r {
 border: 3px solid red;
@@ -131,4 +141,14 @@ border: 3px solid red;
 
 .bor-2g {
   border: 6px solid green;
+}
+
+@media (hover: none) {
+  .flip div:nth-child(1) {
+    transform: perspective(1000px) rotateY(180deg);
+  }
+  
+  .flip div:nth-child(2) {
+    transform: perspective(1000px) rotateY(360deg);
+  }
 }

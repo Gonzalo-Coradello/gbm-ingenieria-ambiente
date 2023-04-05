@@ -22,6 +22,7 @@ const Main = () => {
 const StyledMain = styled.main`
     max-width: 1110px;
     margin-inline: auto;
+    padding-top: 5.3rem;
     
     & > * {
         margin-bottom: 5rem;

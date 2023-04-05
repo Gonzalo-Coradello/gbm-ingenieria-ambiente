@@ -28,18 +28,18 @@ function Footer() {
           <img width={148} src={logo} alt="GBM Ingenieria y ambiente" />
         </div>
         <div>
-          <p className="m-0 text-center">Dirección de la oficina</p>
-          <p className="m-0 text-center">Teléfono de contacto</p>
+          <p className="m-0 text-center font-regular">Dirección de la oficina</p>
+          <p className="m-0 text-center font-regular">Teléfono de contacto</p>
         </div>
       </FooterBox>
       {/* 2 */}
       <FooterBox className="col-12 col-md-3">
         <div className="d-flex flex-column justify-content-center ps-0 ps-md-2 ps-lg-2">
-          <h4 className="m-0">¿Quienes somos?</h4>
+          <h4 className="m-0 font-bold">Nosotros</h4>
           <ul className="m-0 p-0">
             {navbarLinks.map((link) => (
               <li key={link.ref} className="m-0 p-0 pt-2">
-                <a href={link.ref} className="clr-white">
+                <a href={link.ref} className="clr-white font-regular">
                   {link.slug}
                 </a>
               </li>
@@ -50,11 +50,11 @@ function Footer() {
       {/* 3 */}
       <FooterBox className="col-12 col-md-3 py-5">
         <div className="d-flex flex-column justify-content-center ps-0 ps-md-2 ps-lg-2">
-          <h4 className="m-0">Ayuda</h4>
+          <h4 className="m-0 font-bold">Ayuda</h4>
           <ul className="m-0 p-0">
             {helpList.map((link) => (
               <li key={link.ref} className="m-0 p-0 pt-2">
-                <a href={link.ref} className="clr-white">
+                <a href={link.ref} className="clr-white font-regular">
                   {link.slug}
                 </a>
               </li>
@@ -65,7 +65,7 @@ function Footer() {
       {/* 4 */}
       <FooterBox className="col-12 col-md-3">
         <div className="d-flex flex-column justify-content-center align-items-center gap-4">
-          <div className="col-12 d-flex justify-content-center">
+          <div className="col-12 d-flex justify-content-center font-bold">
             <MainButton>Contactá con nosotros</MainButton>
           </div>
           <div className="col-12 d-flex gap-2 justify-content-around">
@@ -85,7 +85,7 @@ function Footer() {
         </div>
       </FooterBox>
       <div className="col-12 d-flex justify-content-center pt-4">
-        <p className="p-0 m-0 col-6 text-center">GBM © 2023 </p>
+        <p className="p-0 m-0 col-6 text-center font-bold">GBM © 2023</p>
       </div>
     </StyledFooter>
   );
@@ -94,6 +94,21 @@ function Footer() {
 const StyledFooter = styled.footer`
   display: flex;
   flex-wrap: wrap;
+
+  & ul {
+    @media (max-width: 767px) {
+      min-width: 150px;
+    }
+  }
+
+  & h4 {
+    font-size: 16px;
+  }
+
+  & a,
+  & p {
+    font-size: 14px;
+  }
 `;
 
 const FooterBox = styled.div`

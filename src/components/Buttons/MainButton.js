@@ -15,8 +15,8 @@ const regularStyle = { padding: "0.5em 1.2em", borderRadius: "1.5em" };
 function MainButton(props) {
   return (
     <StyledButton
-      className={`${props.type == "secondary" ? `bg-green` : `bg-yellow`}`}
-      style={props.size == "small" ? smallStyle : regularStyle}
+      className={`${props.type === "secondary" ? `bg-green` : `bg-yellow`}`}
+      style={props.size === "small" ? smallStyle : regularStyle}
     >
       {props.children}
     </StyledButton>

@@ -1,8 +1,12 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const Card = ({ service: { title, body1, body2, image } }) => {
+
+  const [flipCard, setFlipCard] = useState(false)
+
   return (
-    <StyledCard>
+    <StyledCard onClick={() => setFlipCard(!flipCard)} className={flipCard ? 'flip' : null} >
       <StyledFront>
         <h3>{title}</h3>
         <img src={image} alt={title} />
@@ -23,6 +27,7 @@ const StyledCard = styled.div`
   height: 378px;
   border-radius: 2.5rem;
   color: #fff;
+  font-size: 18px;
 
   & div {
     position: absolute;
@@ -30,15 +35,16 @@ const StyledCard = styled.div`
     height: 100%;
     top: 0;
     left: 0;
-    padding: 4rem 4rem;
+    padding: 4rem 3rem;
     backface-visibility: hidden;
     overflow: hidden;
     transition: 500ms ease-in-out;
   }
 
   & h3 {
+    font-size: 24px;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   & p {
