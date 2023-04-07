@@ -19,47 +19,15 @@ const Form = () => {
   const [isSending, setIsSending] = useState(false);
   const form = useRef();
   const { register, handleSubmit, reset } = useForm();
+  const testingFn = () => {
+    console.log("on function");
+    setTimeout(() => setIsSending(false), 1000);
+  };
+
   const onSubmit = (data) => {
     setIsSending(true);
-    emailjs
-      .sendForm(
-        "service_4thn52g",
-        "template_6szii3d",
-        form.current,
-        "hngfXkj4dqbpXlBAg"
-      )
-      .then(
-        () => {
-          reset();
-          toast.success("¡Correo electrónico enviado correctamente!", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-          });
-          setIsSending(false);
-        },
-        (error) => {
-          console.log(error.text);
-          toast.error(
-            `Opps! Ocurrio un error al enviar el correo electrónico. Error: ${error.text}`,
-            {
-              position: "top-right",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "colored",
-            }
-          );
-        }
-      );
+    setTimeout(testingFn, 1000);
+    console.log("clicked");
   };
 
   return (
@@ -111,6 +79,7 @@ const Form = () => {
                 className="col-5"
                 {...register("name")}
                 required
+                defaultValue={"Hola@hola.com"}
               />
               <StyledInput
                 type="text"
@@ -118,6 +87,7 @@ const Form = () => {
                 className="col-5"
                 {...register("surname")}
                 required
+                defaultValue={"Hola@hola.com"}
               />
             </div>
             <div className="">
@@ -127,6 +97,7 @@ const Form = () => {
                 className="col-12"
                 {...register("email")}
                 required
+                defaultValue={"Hola@hola.com"}
               />
             </div>
             <div className="">
@@ -136,6 +107,7 @@ const Form = () => {
                 className="col-12"
                 {...register("subject")}
                 required
+                defaultValue={"Hola@hola.com"}
               />
             </div>
             <div className="">
@@ -144,9 +116,12 @@ const Form = () => {
                 className="col-12"
                 {...register("message")}
                 required
+                defaultValue={"Hola@hola.com"}
               />
             </div>
-            <SubmitSection className="m-auto">
+            <SubmitSection
+              className={`m-auto bor-1r ${isSending ? "sendingBlock" : ""}`}
+            >
               <MainButton type="secondary" submit="submit">
                 {isSending ? (
                   <DotPulse size={40} speed={1.3} color="#FBBC04" />
@@ -231,6 +206,7 @@ const SubmitSection = styled.div`
   button {
     height: 45px;
     width: 170px;
+    transition: all 0.3s;
     div {
       margin: auto;
     }
@@ -240,3 +216,47 @@ const SubmitSection = styled.div`
 export default Form;
 
 // Trabajado por Gonzalo Ramos
+
+/*
+ 
+ // emailjs
+    //   .sendForm(
+    //     "service_4thn52g",
+    //     "template_6szii3d",
+    //     form.current,
+    //     "hngfXkj4dqbpXlBAg"
+    //   )
+    //   .then(
+    //     () => {
+    //       reset();
+    //       toast.success("¡Correo electrónico enviado correctamente!", {
+    //         position: "top-right",
+    //         autoClose: 5000,
+    //         hideProgressBar: false,
+    //         closeOnClick: true,
+    //         pauseOnHover: false,
+    //         draggable: true,
+    //         progress: undefined,
+    //         theme: "colored",
+    //       });
+    //       setIsSending(false);
+    //     },
+    //     (error) => {
+    //       console.log(error.text);
+    //       toast.error(
+    //         `Opps! Ocurrio un error al enviar el correo electrónico. Error: ${error.text}`,
+    //         {
+    //           position: "top-right",
+    //           autoClose: 5000,
+    //           hideProgressBar: false,
+    //           closeOnClick: true,
+    //           pauseOnHover: true,
+    //           draggable: true,
+    //           progress: undefined,
+    //           theme: "colored",
+    //         }
+    //       );
+    //     }
+    //   );
+    
+ */
