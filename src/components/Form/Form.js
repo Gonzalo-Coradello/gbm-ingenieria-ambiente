@@ -69,9 +69,9 @@ const Form = () => {
     <div id="contacto">
       <Heading>Contacto</Heading>
       {/* 2 SECTIONS CONTAINER (INFO & FORM) */}
-      <div className="col-12 d-flex flex-wrap gap-4 gap-md-0 m-auto bor-2g">
+      <div className="col-12 d-flex flex-wrap gap-4 gap-md-0 m-auto">
         {/* INFO */}
-        <div className="col-12 col-md-5 d-flex flex-column justify-content-center gap-4 gap-md-5 bor-2r">
+        <div className="col-12 col-md-5 d-flex flex-column justify-content-center gap-4 gap-md-5">
           <div className="text-center">
             <h3>Recibe más información.</h3>
             <h3>¡Contáctanos!</h3>
@@ -104,7 +104,7 @@ const Form = () => {
           </div>
         </div>
         {/* FORM */}
-        <div className="col-11 col-md-6 col-lg-7 m-auto bor-2b">
+        <div className="col-11 col-md-6 col-lg-7 m-auto">
           <form
             className="d-flex flex-column gap-4"
             onSubmit={handleSubmit(onSubmit)}
