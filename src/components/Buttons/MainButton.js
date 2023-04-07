@@ -9,14 +9,17 @@ import styled from "styled-components";
   Boton secundario --> type="secondary"
 */
 
-const smallStyle = { padding: "0.4em", borderRadius: "50%" };
+const smallStyle = { padding: "0.3em", borderRadius: "50%" };
 const regularStyle = { padding: "0.5em 1.2em", borderRadius: "1.5em" };
 
 function MainButton(props) {
   return (
     <StyledButton
-      className={`${props.type === "secondary" ? `bg-green` : `bg-yellow`}`}
+      className={`${
+        props.type === "secondary" ? `btn-primary` : `btn-secondary`
+      }`}
       style={props.size === "small" ? smallStyle : regularStyle}
+      type={`${props.submit === "submit" ? "submit" : ""}`}
     >
       {props.children}
     </StyledButton>

@@ -143,6 +143,29 @@ border: 3px solid red;
   border: 6px solid green;
 }
 
+.btn-primary {
+  background-color: var(--green);
+  color: #fff;
+  transition: all .3s;
+}
+.btn-primary:hover {
+  background-color: #0f6d30;
+}
+
+.btn-secondary {
+  background-color: var(--yellow);
+  transition: all .3s;
+  color: #000;
+}
+
+.btn-secondary:hover {
+  background-color: #c29200;
+}
+
+.sendingBlock {
+  cursor: none;
+}
+
 @media (hover: none) {
   .flip div:nth-child(1) {
     transform: perspective(1000px) rotateY(180deg);
