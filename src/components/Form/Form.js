@@ -2,65 +2,137 @@ import styled from "styled-components";
 import { MdLocationOn, MdPhone } from "react-icons/md";
 import { IoMdMail } from "react-icons/io";
 import MainButton from "../Buttons/MainButton";
+import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
+import { DotPulse } from "@uiball/loaders";
+import React, { useState } from "react";
 
 const iconStyle = {
-  fontSize: "3rem",
+  fontSize: "2.5rem",
   color: "var(--green)",
   padding: "7px",
 };
 
 const Form = () => {
+  const [isSending, setIsSending] = useState(false);
+  const form = useRef();
+  const { register, handleSubmit, reset } = useForm();
+
+  // SUBMIT FUNCTION
+  const onSubmit = () => {
+    setIsSending(true);
+    emailjs
+      .sendForm(
+        "service_4thn52g",
+        "template_6szii3d",
+        form.current,
+        "hngfXkj4dqbpXlBAg"
+      )
+      .then(
+        () => {
+          // OK OUT
+          reset();
+          toast.success("¡Correo electrónico enviado correctamente!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+          setIsSending(false);
+        },
+        (error) => {
+          // ERROR OUT
+          toast.error(
+            `Opps! Ocurrio un error al enviar el correo electrónico. Error: ${error.text}`,
+            {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            }
+          );
+        }
+      );
+  };
+
   return (
     <div id="contacto">
       <Heading>Contacto</Heading>
-      <div className="col-12 d-flex flex-wrap gap-4 gap-md-0">
-        <div className="col-12 col-md-5 d-flex flex-column justify-content-center gap-4 m-auto">
+      {/* 2 SECTIONS CONTAINER (INFO & FORM) */}
+      <div className="col-12 d-flex flex-wrap gap-4 gap-md-0 m-auto">
+        {/* INFO */}
+        <div className="col-12 col-md-5 d-flex flex-column justify-content-center gap-4 gap-md-5">
           <div className="text-center">
             <h3>Recibe más información.</h3>
             <h3>¡Contáctanos!</h3>
           </div>
-          <div className="d-flex flex-column align-content-center gap-4 ps-5">
-            <div className="d-flex gap-4 align-content-center">
+          <div className="d-flex flex-column align-content-center gap-4 gap-md-5 ps-lg-5">
+            <div className="d-flex gap-2 gap-lg-4 align-content-center">
               <MainButton size="small">
                 <MdLocationOn style={iconStyle} />
               </MainButton>
-              <h5 className="m-0 d-flex align-items-center">
+              <ContactInfo className="m-0 d-flex align-items-center">
                 Mendoza, Argentina.
-              </h5>
+              </ContactInfo>
             </div>
-            <div className="d-flex gap-4 align-content-center">
+            <div className="d-flex gap-2 gap-lg-4 align-content-center">
               <MainButton size="small">
                 <MdPhone style={iconStyle} />
               </MainButton>
-              <h5 className="m-0 d-flex align-items-center">
+              <ContactInfo className="m-0 d-flex align-items-center">
                 +54 1 11 1111-1111
-              </h5>
+              </ContactInfo>
             </div>
-            <div className="d-flex gap-4 align-content-center">
+            <div className="d-flex gap-2 gap-lg-4 align-content-center">
               <MainButton size="small">
                 <IoMdMail style={iconStyle} />
               </MainButton>
-              <h5 className="m-0 d-flex align-items-center">
+              <ContactInfo className="m-0 d-flex align-items-center">
                 micorreo@correo.com.ar
-              </h5>
+              </ContactInfo>
             </div>
           </div>
         </div>
-        <div className="col-11 col-md-7 m-auto">
-          <form className="d-flex flex-column gap-4">
-            <div className="d-flex justify-content-between">
-              <StyledInput type="text" placeholder="Nombre" className="col-5" />
+        {/* FORM */}
+        <div className="col-11 col-md-6 col-lg-7 m-auto">
+          <form
+            className="d-flex flex-column gap-4"
+            onSubmit={handleSubmit(onSubmit)}
+            ref={form}
+          >
+            <div className="d-flex justify-content-between flex-column flex-sm-row gap-4 gap-sm-0">
+              <StyledInput
+                type="text"
+                placeholder="Nombre"
+                className="col-12 col-sm-5"
+                {...register("name")}
+                required
+              />
               <StyledInput
                 type="text"
                 placeholder="Apellido"
-                className="col-5"
+                className="col-12 col-sm-5"
+                {...register("surname")}
+                required
               />
             </div>
             <div className="">
               <StyledInput
-                type="mail"
+                type="email"
                 placeholder="Correo Electrónico"
                 className="col-12"
+                {...register("email")}
+                required
               />
             </div>
             <div className="">
@@ -68,20 +140,31 @@ const Form = () => {
                 type="mail"
                 placeholder="Escribe aquí el asunto"
                 className="col-12"
+                {...register("subject")}
+                required
               />
             </div>
             <div className="">
               <StyledTextarea
                 placeholder="Cuerpo del mensaje"
                 className="col-12"
+                {...register("message")}
+                required
               />
             </div>
-            <div className="m-auto">
-              <MainButton type="secondary">Enviar mensaje</MainButton>
-            </div>
+            <SubmitSection className={`m-auto ${isSending && "sendingBlock"}`}>
+              <MainButton type="secondary" submit="submit">
+                {isSending ? (
+                  <DotPulse size={40} speed={1.3} color="#FBBC04" />
+                ) : (
+                  "Enviar mensaje"
+                )}
+              </MainButton>
+            </SubmitSection>
           </form>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
@@ -118,6 +201,11 @@ const StyledInput = styled.input`
   padding: 10px 15px;
   border-radius: 10px;
   font-style: italic;
+  transition: all 0.3s;
+  cursor: pointer;
+  &:focus {
+    opacity: 0.9;
+  }
   &::placeholder {
     color: #fff;
   }
@@ -133,11 +221,34 @@ const StyledTextarea = styled.textarea`
   resize: none;
   min-height: 200px;
   font-style: italic;
+  cursor: pointer;
   &::placeholder {
     color: #fff;
+  }
+`;
+
+const ContactInfo = styled.h5`
+  @media (max-width: 720px) {
+    font-size: 1.1rem;
+  }
+`;
+
+const SubmitSection = styled.div`
+  button {
+    height: 45px;
+    width: 170px;
+    transition: all 0.3s;
+    div {
+      margin: auto;
+    }
   }
 `;
 
 export default Form;
 
 // Trabajado por Gonzalo Ramos
+
+/*
+ 
+
+ */
