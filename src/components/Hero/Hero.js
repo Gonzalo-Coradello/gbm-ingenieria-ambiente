@@ -1,64 +1,80 @@
 import styled from "styled-components"
+import MainButton from "../Buttons/MainButton"
 
 const Hero = () => {
   return (
-    <div>
-      <img className="w-100" src="/images/hero-wide.png" alt="Portada" />
-      <StyledDiv>
-        <img src="/images/hero-rounded.png" alt="Ingeniería y ambiente" />
-        <Card>
-            <p>Nos enfocamos en los lineamientos que dicta la Ley 5961 de Mendoza.</p>
-            <p className="font-light-italic">-Recursos naturales- Protección del medio ambiente-</p>
-            <a href="https://www.mendoza.gov.ar/economia/wp-content/uploads/sites/44/2017/02/LEY_5.961.pdf">Leer más</a>
-        </Card>
-      </StyledDiv>
-    </div>
+    <Section>
+      <div>
+        <div className="clr-green">
+          <h1 className="font-medium">Acompañamos tu desarrollo</h1>
+          <p>Somos una consultora de jóvenes profesionales. Nos dedicamos a la asesoría, gestión y diseño de proyectos inmobiliarios para grupos desarrolladores y emprendedores privados.</p>
+        </div>
+        <ButtonContainer href="#contacto">
+          <MainButton>Contactá con nosotros</MainButton>
+        </ButtonContainer>
+      </div>
+      <img src='/images/hero.png' alt="GBM Ingeniería y Ambiente" />
+    </Section>
   )
 }
 
-const Card = styled.div`
-    background-color: var(--green);
-    color: #FFF;
-    padding: 2rem;
-    max-width: 470px;
-    font-size: 15px;
-    margin-inline: auto;
+const Section = styled.section`
+  position: relative;
+  max-width: 100vw;
+  width: 100%;  
+  height: 400px;
+
+  @media(min-width: 700px) {
+    height: 90vh;
+  }
+
+  & > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 700px;
+    padding: 6rem 4rem;
+
+    @media(max-width: 700px) {
+      height: 100%;
+      display: grid;
+      align-items: center;
+      padding: 2rem;
+      text-align: center;
+      background-color: #FFF5;
+      backdrop-filter: blur(3px);
+    }
+  }
+
+  & h1 {
     
-    @media (min-width: 980px) {
-        margin-left: -6rem;
-    }
+    font-size: 28px;
 
-    & a {
-        display: block;
-        color: #FFF;
-        text-decoration: underline;
-        width: fit-content;
-        margin-inline: auto;
-        margin-top: 2.5rem;
+    @media(min-width: 500px) {
+      font-size: 40px;
     }
+  }
 
-    & :nth-child(1) {
-        font-size: 20px;
-    }
+
+  & p {
+    // line-height: 20px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  & img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    overflow: hidden;
+  }
 `
 
-const StyledDiv = styled.div`
-
-    display: flex;
-    flex-direction: column;
-    margin-top: 4rem;
-    
-    @media (min-width: 980px) {
-      flex-direction: row;
-      align-items: center;
-        gap: 2rem;
-
-        & > img {
-          border-radius: 2.5rem;
-      }
-    }
-
-    
+const ButtonContainer = styled.a`
+  @media(max-width: 700px) {
+    width: fit-content;
+    margin-inline:auto;
+  }
 `
 
 export default Hero
