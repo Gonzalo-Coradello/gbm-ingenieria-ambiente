@@ -23,10 +23,13 @@ const Main = () => {
 const StyledMain = styled.main`
 padding-top: 5.3rem;
 
-& > * {
+& > *:not(:nth-child(1)) {
   max-width: 1110px;
-  margin-bottom: 5rem;
   margin-inline: auto;
+}
+
+& > * {
+  margin-bottom: 5rem;
   }
 `;
 
