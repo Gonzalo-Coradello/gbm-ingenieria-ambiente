@@ -4,6 +4,7 @@ import MainButton from "../Buttons/MainButton"
 const Hero = () => {
   return (
     <Section>
+      <Filter />
       <div>
         <div className="clr-green">
           <h1 className="font-medium">Acompañamos tu desarrollo</h1>
@@ -20,7 +21,6 @@ const Hero = () => {
 
 const Section = styled.section`
   position: relative;
-  max-width: 100vw;
   width: 100%;  
   height: 400px;
 
@@ -31,8 +31,8 @@ const Section = styled.section`
   & > div {
     position: absolute;
     top: 0;
-    left: 0;
-    max-width: 700px;
+    right: 0;
+    max-width: 650px;
     padding: 6rem 4rem;
 
     @media(max-width: 700px) {
@@ -41,23 +41,19 @@ const Section = styled.section`
       align-items: center;
       padding: 2rem;
       text-align: center;
-      background-color: #FFF5;
-      backdrop-filter: blur(3px);
+      
     }
   }
 
   & h1 {
-    
-    font-size: 28px;
-
+    font-size: 24px;
     @media(min-width: 500px) {
-      font-size: 40px;
+      font-size: 36px;
     }
   }
 
 
   & p {
-    // line-height: 20px;
     margin-top: 1rem;
     margin-bottom: 2rem;
   }
@@ -75,6 +71,16 @@ const ButtonContainer = styled.a`
     width: fit-content;
     margin-inline:auto;
   }
+`
+
+const Filter = styled.span`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF5;
+  // backdrop-filter: blur(2px);
 `
 
 export default Hero
