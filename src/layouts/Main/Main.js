@@ -6,13 +6,14 @@ import Services from "../../components/Services/Services";
 import Form from "../../components/Form/Form";
 import styled from "styled-components";
 import "react-toastify/dist/ReactToastify.css";
+import ServicesHome from "../../components/ServicesHome/ServicesHome";
 
 const Main = () => {
   return (
     <StyledMain>
       <Hero />
       <About />
-      <Services />
+      <ServicesHome />
       <Projects />
       <Team />
       <Form />
