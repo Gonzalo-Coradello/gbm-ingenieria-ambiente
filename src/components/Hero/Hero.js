@@ -80,7 +80,12 @@ const Filter = styled.span`
   width: 100%;
   height: 100%;
   background-color: #FFF5;
-  // backdrop-filter: blur(2px);
+
+  @media(max-width: 700px) {
+    background-color: #FFF8;
+    backdrop-filter: blur(5px);
+  }
+
 `
 
 export default Hero
