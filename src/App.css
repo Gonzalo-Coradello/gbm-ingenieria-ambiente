@@ -9,6 +9,12 @@
 }
 
 @font-face {
+  font-family: MullerRegularItalic;
+  src: url(./assets/fonts/MullerRegularItalic.ttf);
+}
+
+
+@font-face {
   font-family: MullerBold;
   src: url(./assets/fonts/MullerBold.ttf)
 }
@@ -72,6 +78,10 @@ img {
 
 .font-regular {
   font-family: MullerRegular;
+}
+
+.font-italic {
+  font-family: MullerRegularItalic;
 }
 
 .font-bold {
