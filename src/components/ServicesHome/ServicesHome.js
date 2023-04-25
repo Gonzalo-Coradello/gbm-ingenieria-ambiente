@@ -1,38 +1,41 @@
 import styled from "styled-components";
 import Service from "../Service/Service";
 import MainButton from "../Buttons/MainButton";
+import { useNavigate } from "react-router-dom";
 
 const services = [
-    {
-        icon: "/images/icons/1.png",
-        title: "Asesoramiento de proyecto"
-    },
-    {
-        icon: "/images/icons/3.png",
-        title: "Proyectos de loteo y urbanización"
-    },
-    {
-        icon: "/images/icons/5.png",
-        title: "Estudio de impacto ambiental"
-    },
-]
+  {
+    icon: "/images/icons/1.png",
+    title: "Asesoramiento de proyecto",
+  },
+  {
+    icon: "/images/icons/3.png",
+    title: "Proyectos de loteo y urbanización",
+  },
+  {
+    icon: "/images/icons/5.png",
+    title: "Estudio de impacto ambiental",
+  },
+];
 
 const ServicesHome = () => {
-
-    return (
-        <section>
-            <Heading>Servicios</Heading>
-            <Services>
-                { services.map(service => (
-                    <Service icon={service.icon} title={service.title} variant="button" />
-                ))}
-            </Services>
-            <ButtonContainer>
-                <MainButton size="large" >Ver todos</MainButton>
-            </ButtonContainer>
-        </section>
-    )
-}
+  const navigate = useNavigate();
+  return (
+    <section>
+      <Heading>Servicios</Heading>
+      <Services>
+        {services.map((service) => (
+          <Service icon={service.icon} title={service.title} variant="button" />
+        ))}
+      </Services>
+      <ButtonContainer>
+        <MainButton size="large" fn={() => navigate("/servicios")}>
+          Ver todos
+        </MainButton>
+      </ButtonContainer>
+    </section>
+  );
+};
 
 const Heading = styled.h2`
   text-align: center;
@@ -63,13 +66,13 @@ const Services = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 4rem;
-`
+`;
 
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   font-size: 14px;
   margin-top: 2rem;
-`
+`;
 
-export default ServicesHome
+export default ServicesHome;

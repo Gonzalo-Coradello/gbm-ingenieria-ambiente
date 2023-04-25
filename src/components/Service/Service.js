@@ -1,44 +1,63 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const Service = ({ icon, title, variant, body = "" }) => {
-
-    return (
-        <Container>
-            <img className="mx-auto" src={icon} alt={title} />
-            <h3 className="clr-green d-inline-block">{title}</h3>
-            {
-                variant === "button" ?
-                <Button className="font-regular bg-gray">Más información</Button> :
-                <p>{body}</p>
-            }
-        </Container>
-    )
-}
+  return (
+    <Container className={`${!variant && "col-12 col-md-5 col-lg-3 gap-2"}`}>
+      <div className="mx-auto">
+        <img className="mx-auto" src={icon} alt={title} />
+      </div>
+      <StyledTitle>
+        <h3 className={`clr-green`}>{title}</h3>
+      </StyledTitle>
+      {variant === "button" ? (
+        <Button className="font-regular bg-gray">Más información</Button>
+      ) : (
+        <ServiceText>{body}</ServiceText>
+      )}
+    </Container>
+  );
+};
 
 const Container = styled.div`
-    display: grid;
-    width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: ${({ variant }) => variant !== "button" && "fit-content"};
+  width: ${({ variant }) => variant === "button" && "320px"};
+  & h3 {
+    font-size: 20px;
+    margin-top: 1.2rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+  }
+`;
 
-    & h3 {
-        font-size: 20px;
-        margin-top: 1.2rem;
-        margin-bottom: .8rem;
-        text-align: center;
-    }
-`
+const StyledTitle = styled.div`
+  display: flex;
+  align-items: center;
+  height: ${({ variant }) => variant !== "button" && "70px"};
+  h3 {
+    margin: 0;
+    padding: 0;
+  }
+`;
 
 const Button = styled.button`
-    font-size: 14px;
-    color: white;
-    border: none;
-    width: fit-content;
-    margin-inline: auto;
-    padding: .75em 3em;
-    transition: all 300ms;
+  font-size: 14px;
+  color: white;
+  border: none;
+  width: fit-content;
+  margin-inline: auto;
+  padding: 0.75em 3em;
+  transition: all 300ms;
 
-    &:hover {
-        opacity: .5;
-    }
-`
+  &:hover {
+    opacity: 0.5;
+  }
+`;
 
-export default Service
+const ServiceText = styled.p`
+  line-height: normal;
+`;
+
+export default Service;

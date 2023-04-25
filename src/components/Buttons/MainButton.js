@@ -11,7 +11,7 @@ import styled from "styled-components";
 
 const smallStyle = { padding: "0.3em", borderRadius: "50%" };
 const regularStyle = { padding: "0.5em 1.2em", borderRadius: "1.5em" };
-const largeStyle = { padding: "0.5em 4.6em", borderRadius: "1.5em" }
+const largeStyle = { padding: "0.5em 4.6em", borderRadius: "1.5em" };
 
 function MainButton(props) {
   return (
@@ -19,8 +19,15 @@ function MainButton(props) {
       className={`font-bold ${
         props.type === "secondary" ? `btn-primary` : `btn-secondary`
       }`}
-      style={props.size === "small" ? smallStyle : props.size === "large" ? largeStyle : regularStyle}
+      style={
+        props.size === "small"
+          ? smallStyle
+          : props.size === "large"
+          ? largeStyle
+          : regularStyle
+      }
       type={`${props.submit === "submit" ? "submit" : ""}`}
+      onClick={props.fn}
     >
       {props.children}
     </StyledButton>

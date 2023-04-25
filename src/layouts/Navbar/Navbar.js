@@ -32,7 +32,7 @@ const Navbar = () => {
           >
             <ul className="pt-2 px-3 text-end">
               {navbarLinks.map((link) => (
-                <li key={link.ref}>
+                <li key={link.ref}>z
                   <a
                     href={link.ref}
                     className="clr-green"
