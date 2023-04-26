@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Service from "../Service/Service";
 import MainButton from "../Buttons/MainButton";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -19,19 +19,23 @@ const services = [
 ];
 
 const ServicesHome = () => {
-  const navigate = useNavigate();
   return (
     <section>
       <Heading>Servicios</Heading>
       <Services>
         {services.map((service) => (
-          <Service icon={service.icon} title={service.title} variant="button" />
+          <Service
+            key={service.title}
+            icon={service.icon}
+            title={service.title}
+            variant="button"
+          />
         ))}
       </Services>
       <ButtonContainer>
-        <MainButton size="large" fn={() => navigate("/servicios")}>
-          Ver todos
-        </MainButton>
+        <Link to="/servicios">
+          <MainButton size="large">Ver todos</MainButton>
+        </Link>
       </ButtonContainer>
     </section>
   );

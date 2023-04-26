@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Service from "../Service/Service";
+import MainButton from "../Buttons/MainButton";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -61,7 +63,7 @@ export const ServicesView = () => {
           <Filter />
           <StyledImg src="./images/services/excavacion.jpg" alt="Excavación" />
         </StyledDivImg>
-        <div className="col-lg-8 m-auto">
+        <div className="col-11 col-lg-8 m-auto">
           <ServicesText>
             Nuestra misión es acompañar al cliente en el proceso, nucleando
             todos los procesos técnicos y administrativos en un solo actor, y de
@@ -69,10 +71,19 @@ export const ServicesView = () => {
             en su materialización y ágiles en el tiempo.
           </ServicesText>
         </div>
-        <div className="d-flex col-lg-12 m-auto flex-wrap justify-content-evenly gap-5">
+        <div className="d-flex col-lg-12 m-auto flex-wrap justify-content-evenly">
           {services.map((ser) => (
             <Service key={ser.title} title={ser.title} body={ser.description} />
           ))}
+          <div className="col-10 col-md-5 col-lg-3 gap-2 mt-2 mt-lg-5 mx-2 d-flex flex-column align-items-center justify-content-center">
+            <p className="text-center p-0">
+              Si requiere atención personalizada, costos, valoración de sus
+              proyectos, favor de ponerse en contacto con nosotros.
+            </p>
+            <MainButton>
+              <Link to="/#contacto">Contactá con nosotros</Link>
+            </MainButton>
+          </div>
         </div>
       </div>
     </StyledServices>
@@ -80,13 +91,15 @@ export const ServicesView = () => {
 };
 
 const StyledServices = styled.div`
-  padding-top: 5.3rem;
+  padding: 5.3rem 0;
 `;
 
 const StyledImg = styled.img`
   width: 100%;
-  object-position: center -13.5rem;
   height: 300px;
+  @media (min-width: 992px) {
+    object-position: center -13.5rem;
+  }
 `;
 
 const ServicesText = styled.p`
@@ -107,9 +120,8 @@ const Filter = styled.span`
   width: 100%;
   height: 100%;
   background-color: #fff5;
-
+  backdrop-filter: blur(2px);
   @media (max-width: 700px) {
     background-color: #fff8;
-    backdrop-filter: blur(5px);
   }
 `;

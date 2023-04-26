@@ -15,6 +15,35 @@ const iconStyle = {
   padding: "7px",
 };
 
+const succeessToast = () => {
+  toast.success("¡Correo electrónico enviado correctamente!", {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    progress: undefined,
+    theme: "colored",
+  });
+};
+
+const errorToast = (errorMsg) => {
+  toast.error(
+    `Opps! Ocurrio un error al enviar el correo electrónico. Error: ${errorMsg}`,
+    {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    }
+  );
+};
+
 const Form = () => {
   const [isSending, setIsSending] = useState(false);
   const form = useRef();
@@ -34,33 +63,12 @@ const Form = () => {
         () => {
           // OK OUT
           reset();
-          toast.success("¡Correo electrónico enviado correctamente!", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-          });
+          succeessToast();
           setIsSending(false);
         },
         (error) => {
           // ERROR OUT
-          toast.error(
-            `Opps! Ocurrio un error al enviar el correo electrónico. Error: ${error.text}`,
-            {
-              position: "top-right",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "colored",
-            }
-          );
+          errorToast(error.text);
         }
       );
   };
@@ -126,7 +134,7 @@ const Form = () => {
                 required
               />
             </div>
-            <div className="">
+            <div>
               <StyledInput
                 type="email"
                 placeholder="Correo Electrónico"
@@ -135,7 +143,7 @@ const Form = () => {
                 required
               />
             </div>
-            <div className="">
+            <div>
               <StyledInput
                 type="mail"
                 placeholder="Escribe aquí el asunto"
@@ -144,7 +152,7 @@ const Form = () => {
                 required
               />
             </div>
-            <div className="">
+            <div>
               <StyledTextarea
                 placeholder="Cuerpo del mensaje"
                 className="col-12"

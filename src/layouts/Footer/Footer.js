@@ -1,7 +1,7 @@
 import React from "react";
 import { AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
 import { FaLinkedinIn, FaFacebookF } from "react-icons/fa";
-import MainButton from "../../components/Buttons/MainButton"
+import MainButton from "../../components/Buttons/MainButton";
 import styled from "styled-components";
 import logo from "./assets/white-logo.png";
 
@@ -28,7 +28,9 @@ function Footer() {
           <img width={148} src={logo} alt="GBM Ingenieria y ambiente" />
         </div>
         <div>
-          <p className="m-0 text-center font-regular">Dirección de la oficina</p>
+          <p className="m-0 text-center font-regular">
+            Dirección de la oficina
+          </p>
           <p className="m-0 text-center font-regular">Teléfono de contacto</p>
         </div>
       </FooterBox>
@@ -53,7 +55,7 @@ function Footer() {
           <h4 className="m-0 font-bold">Ayuda</h4>
           <ul className="m-0 p-0">
             {helpList.map((link) => (
-              <li key={link.ref} className="m-0 p-0 pt-2">
+              <li key={link.slug} className="m-0 p-0 pt-2">
                 <a href={link.ref} className="clr-white font-regular">
                   {link.slug}
                 </a>

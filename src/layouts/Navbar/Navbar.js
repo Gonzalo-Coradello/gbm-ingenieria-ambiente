@@ -32,7 +32,7 @@ const Navbar = () => {
           >
             <ul className="pt-2 px-3 text-end">
               {navbarLinks.map((link) => (
-                <li key={link.ref}>z
+                <li key={link.ref}>
                   <a
                     href={link.ref}
                     className="clr-green"
@@ -56,22 +56,22 @@ const Navbar = () => {
       {/* Menu desktop */}
       <nav className="d-none d-sm-flex position-fixed fixed-top-0 w-100">
         <div className="container-lg py-3 px-3 d-flex justify-content-between align-items-sm-center">
-            <Logo />
-            <div className="pt-2">
-              <ul className="d-flex gap-4">
-                {navbarLinks.map((link) => (
-                  <li key={link.ref}>
-                    <a
-                      href={link.ref}
-                      className="clr-green"
-                      onClick={() => setOpenMenu(false)}
-                    >
-                      {link.slug}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <Logo />
+          <div className="pt-2">
+            <ul className="d-flex gap-4">
+              {navbarLinks.map((link) => (
+                <li key={link.ref}>
+                  <a
+                    href={link.ref}
+                    className="clr-green"
+                    onClick={() => setOpenMenu(false)}
+                  >
+                    {link.slug}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </nav>
     </header>

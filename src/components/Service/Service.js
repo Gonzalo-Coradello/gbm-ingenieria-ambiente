@@ -1,18 +1,37 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { AiFillQuestionCircle } from "react-icons/ai";
+import MainButton from "../Buttons/MainButton";
 
-const Service = ({ icon, title, variant, body = "" }) => {
+const Service = ({ icon, title, variant = "", body = "" }) => {
   return (
-    <Container className={`${!variant && "col-12 col-md-5 col-lg-3 gap-2"}`}>
+    <Container
+      className={`${
+        variant !== "button"
+          ? "col-12 col-md-5 col-lg-3 gap-1 gap-lg-2 mb-4 mb-lg-0 my-2 my-lg-5 mx-2"
+          : "serviceSecondary"
+      }`}
+    >
       <div className="mx-auto">
-        <img className="mx-auto" src={icon} alt={title} />
+        {variant === "button" ? (
+          <img className="mx-auto" src={icon} alt={title} />
+        ) : (
+          <IconStyled>
+            <AiFillQuestionCircle />
+          </IconStyled>
+        )}
       </div>
       <StyledTitle>
         <h3 className={`clr-green`}>{title}</h3>
       </StyledTitle>
       {variant === "button" ? (
-        <Button className="font-regular bg-gray">Más información</Button>
+        <Button className="bg-gray">
+          <Link to="/servicios" className="font-regular">
+            Más información
+          </Link>
+        </Button>
       ) : (
-        <ServiceText>{body}</ServiceText>
+        <ServiceText className="px-3 px-lg-0">{body}</ServiceText>
       )}
     </Container>
   );
@@ -22,8 +41,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: ${({ variant }) => variant !== "button" && "fit-content"};
-  width: ${({ variant }) => variant === "button" && "320px"};
   & h3 {
     font-size: 20px;
     margin-top: 1.2rem;
@@ -58,6 +75,15 @@ const Button = styled.button`
 
 const ServiceText = styled.p`
   line-height: normal;
+`;
+
+const IconStyled = styled.div`
+  background: rgba(12, 91, 40, 0.2);
+  padding: 15px;
+  border-radius: 50%;
+  svg {
+    font-size: 2.5rem;
+  }
 `;
 
 export default Service;
