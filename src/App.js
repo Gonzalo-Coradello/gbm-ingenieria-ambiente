@@ -1,8 +1,9 @@
 import "./App.css";
 import Footer from "./layouts/Footer/Footer";
-import Navbar from "./layouts/Navbar/Navbar"
+import Navbar from "./layouts/Navbar/Navbar";
 import Main from "./layouts/Main/Main";
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ServicesView } from "./components/ServicesView/ServicesView";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Main />} />
-          {/* <Route path="/servicios" element={<Services />} /> */}
+          <Route path="/servicios" element={<ServicesView />} />
+          {/* TODO: <Route path="/*" element={<ErrorPage />}></Route> */}
         </Routes>
         <Footer />
       </div>

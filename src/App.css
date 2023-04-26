@@ -185,3 +185,7 @@ border: 3px solid red;
     transform: perspective(1000px) rotateY(360deg);
   }
 }
+
+.serviceSecondary {
+  width: 300px;
+}

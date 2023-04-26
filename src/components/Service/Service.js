@@ -1,44 +1,89 @@
-import styled from "styled-components"
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { AiFillQuestionCircle } from "react-icons/ai";
+import MainButton from "../Buttons/MainButton";
 
-const Service = ({ icon, title, variant, body = "" }) => {
-
-    return (
-        <Container>
-            <img className="mx-auto" src={icon} alt={title} />
-            <h3 className="clr-green d-inline-block">{title}</h3>
-            {
-                variant === "button" ?
-                <Button className="font-regular bg-gray">Más información</Button> :
-                <p>{body}</p>
-            }
-        </Container>
-    )
-}
+const Service = ({ icon, title, variant = "", body = "" }) => {
+  return (
+    <Container
+      className={`${
+        variant !== "button"
+          ? "col-12 col-md-5 col-lg-3 gap-1 gap-lg-2 mb-4 mb-lg-0 my-2 my-lg-5 mx-2"
+          : "serviceSecondary"
+      }`}
+    >
+      <div className="mx-auto">
+        {variant === "button" ? (
+          <img className="mx-auto" src={icon} alt={title} />
+        ) : (
+          <IconStyled>
+            <AiFillQuestionCircle />
+          </IconStyled>
+        )}
+      </div>
+      <StyledTitle>
+        <h3 className={`clr-green`}>{title}</h3>
+      </StyledTitle>
+      {variant === "button" ? (
+        <Button className="bg-gray">
+          <Link to="/servicios" className="font-regular">
+            Más información
+          </Link>
+        </Button>
+      ) : (
+        <ServiceText className="px-3 px-lg-0">{body}</ServiceText>
+      )}
+    </Container>
+  );
+};
 
 const Container = styled.div`
-    display: grid;
-    width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & h3 {
+    font-size: 20px;
+    margin-top: 1.2rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+  }
+`;
 
-    & h3 {
-        font-size: 20px;
-        margin-top: 1.2rem;
-        margin-bottom: .8rem;
-        text-align: center;
-    }
-`
+const StyledTitle = styled.div`
+  display: flex;
+  align-items: center;
+  height: ${({ variant }) => variant !== "button" && "70px"};
+  h3 {
+    margin: 0;
+    padding: 0;
+  }
+`;
 
 const Button = styled.button`
-    font-size: 14px;
-    color: white;
-    border: none;
-    width: fit-content;
-    margin-inline: auto;
-    padding: .75em 3em;
-    transition: all 300ms;
+  font-size: 14px;
+  color: white;
+  border: none;
+  width: fit-content;
+  margin-inline: auto;
+  padding: 0.75em 3em;
+  transition: all 300ms;
 
-    &:hover {
-        opacity: .5;
-    }
-`
+  &:hover {
+    opacity: 0.5;
+  }
+`;
 
-export default Service
+const ServiceText = styled.p`
+  line-height: normal;
+`;
+
+const IconStyled = styled.div`
+  background: rgba(12, 91, 40, 0.2);
+  padding: 15px;
+  border-radius: 50%;
+  svg {
+    font-size: 2.5rem;
+  }
+`;
+
+export default Service;
