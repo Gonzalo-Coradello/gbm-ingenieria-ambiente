@@ -13,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/servicios" element={<ServicesView />} />
+          {/* TODO: <Route path="/*" element={<ErrorPage />}></Route> */}
         </Routes>
         <Footer />
       </div>

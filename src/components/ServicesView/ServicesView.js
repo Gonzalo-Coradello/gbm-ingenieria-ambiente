@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import Service from "../Service/Service";
 import MainButton from "../Buttons/MainButton";
-import { Link } from "react-router-dom";
 
 const services = [
   {
