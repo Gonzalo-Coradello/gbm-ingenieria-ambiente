@@ -3,7 +3,7 @@ import Footer from "./layouts/Footer/Footer";
 import Navbar from "./layouts/Navbar/Navbar";
 import Main from "./layouts/Main/Main";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ServicesView } from "./components/ServicesView/ServicesView";
+import { ServiceView } from "./components/ServiceView/ServiceView";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/servicios" element={<ServicesView />} />
+          <Route path="/servicios/:id" element={<ServiceView />} />
           {/* TODO: <Route path="/*" element={<ErrorPage />}></Route> */}
         </Routes>
         <Footer />

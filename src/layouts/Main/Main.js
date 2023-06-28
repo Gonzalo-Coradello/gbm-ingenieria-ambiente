@@ -2,18 +2,17 @@ import About from "../../components/About/About";
 import Hero from "../../components/Hero/Hero";
 import Team from "../../components/Team/Team";
 import Projects from "../../components/Projects/Projects";
-import Services from "../../components/Services/Services";
 import Form from "../../components/Form/Form";
 import styled from "styled-components";
 import "react-toastify/dist/ReactToastify.css";
-import ServicesHome from "../../components/ServicesHome/ServicesHome";
+import Services from "../../components/Services/Services";
 
 const Main = () => {
   return (
     <StyledMain>
       <Hero />
       <About />
-      <ServicesHome />
+      <Services />
       <Projects />
       <Team />
       <Form />
@@ -24,7 +23,7 @@ const Main = () => {
 const StyledMain = styled.main`
 padding-top: 5.3rem;
 
-& > *:not(:nth-child(1)) {
+& > * {
   max-width: 1110px;
   margin-inline: auto;
 }
