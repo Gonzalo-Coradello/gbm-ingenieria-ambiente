@@ -20,7 +20,7 @@ const images = [
 
 const Projects = () => {
   return (
-    <Container>
+    <Container id="proyectos">
       <Heading>Proyectos</Heading>
       <Swiper
         modules={[Autoplay]}
