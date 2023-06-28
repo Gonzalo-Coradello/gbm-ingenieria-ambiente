@@ -98,7 +98,7 @@ const Form = () => {
                 <MdPhone style={iconStyle} />
               </MainButton>
               <ContactInfo className="m-0 d-flex align-items-center">
-                +54 1 11 1111-1111
+                +54 9 2604686063 / 2604560911
               </ContactInfo>
             </div>
             <div className="d-flex gap-2 gap-lg-4 align-content-center">
@@ -106,7 +106,7 @@ const Form = () => {
                 <IoMdMail style={iconStyle} />
               </MainButton>
               <ContactInfo className="m-0 d-flex align-items-center">
-                micorreo@correo.com.ar
+                gbmconsultora.sr@gmail.com
               </ContactInfo>
             </div>
           </div>
