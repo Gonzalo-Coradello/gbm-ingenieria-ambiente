@@ -7,9 +7,9 @@ import logo from "./assets/white-logo.png";
 
 function Footer() {
   const navbarLinks = [
-    { ref: "#about", slug: "Quiénes somos" },
-    { ref: "#servicios", slug: "Servicios" },
-    { ref: "#contacto", slug: "Contacto" },
+    { ref: "/nosotros", slug: "¿Quiénes somos?" },
+    { ref: "/#servicios", slug: "Servicios" },
+    { ref: "/#proyectos", slug: "Proyectos" },
   ];
 
   const helpList = [
@@ -29,9 +29,9 @@ function Footer() {
         </div>
         <div>
           <p className="m-0 text-center font-regular">
-            Dirección de la oficina
+            Mendoza, Argentina
           </p>
-          <p className="m-0 text-center font-regular">Teléfono de contacto</p>
+          <p className="m-0 text-center font-regular">+54 9 2604686063 / 2604560911</p>
         </div>
       </FooterBox>
       {/* 2 */}

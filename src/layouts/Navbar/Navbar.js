@@ -1,21 +1,25 @@
 import { useState } from "react";
 import Logo from "../../components/Logo/Logo";
 import "./Navbar.css";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const navigate = useNavigate()
 
   const navbarLinks = [
-    { ref: "#about", slug: "Quiénes somos" },
-    { ref: "#servicios", slug: "Servicios" },
-    { ref: "#contacto", slug: "Contacto" },
+    { ref: "/nosotros", slug: "Nosotros" },
+    { ref: "/#servicios", slug: "Servicios" },
+    { ref: "/#contacto", slug: "Contacto" },
   ];
 
   return (
     <header>
       {/* Menu mobile */}
       <nav className="d-sm-none position-fixed fixed-top-0 container-lg py-3 px-3 d-flex justify-content-between align-items-sm-center">
-        <Logo />
+        <div onClick={() => navigate('/')} role='button' >
+          <Logo />
+        </div>
         <div>
           <div
             className={openMenu ? "hamburger active" : "hamburger"}
@@ -56,7 +60,9 @@ const Navbar = () => {
       {/* Menu desktop */}
       <nav className="d-none d-sm-flex position-fixed fixed-top-0 w-100">
         <div className="container-lg py-3 px-3 d-flex justify-content-between align-items-sm-center">
+        <div onClick={() => navigate('/')} role='button' >
           <Logo />
+        </div>
           <div className="pt-2">
             <ul className="d-flex gap-4">
               {navbarLinks.map((link) => (
