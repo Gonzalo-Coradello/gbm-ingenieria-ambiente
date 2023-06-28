@@ -1,42 +1,71 @@
-import styled from "styled-components";
-import Card from "../Card/Card";
+import styled from 'styled-components'
+import Service from '../Service/Service'
 
-const services = [
+export const services = [
   {
-    title: "Asesoría",
-    body1:
-      "Asesorar a emprendedores y desarrolladores inmobiliarios sobre factibilidades y viabilidad del proyecto.",
-    body2:
-      "Acompañamiento a clientes en la dirección y ejecución de las obras de urbanización.",
-    image: "/images/services/service.png",
+    id: 1,
+    icon: '/images/icons/1.png',
+    title: 'Asesoramiento de proyecto',
   },
   {
-    title: "Desarrollo",
-    body1: "Desarrollo de proyecto de loteo y urbanización.",
-    body2:
-      "Desarrollo de proyectos de redes de servicios, como redes de agua potable y cloaca, de electricidad y de gas.",
-    image: "/images/services/service.png",
+    id: 2,
+    icon: '/images/icons/2.png',
+    title: 'Proyectos de loteo y urbanización',
   },
   {
-    title: "Estudios",
-    body1: "Ejecución de estudios ambientales, estudios hídricos e hidráulicos",
-    body2: "",
-    image: "/images/services/service.png",
+    id: 3,
+    icon: '/images/icons/3.png',
+    title: 'Estudio de impacto ambiental',
   },
-];
+  {
+    id: 4,
+    icon: '/images/icons/4.png',
+    title: 'Estudio hidráulico',
+  },
+  {
+    id: 5,
+    icon: '/images/icons/5.png',
+    title: 'Proyecto de red de agua y cloaca',
+  },
+  {
+    id: 6,
+    icon: '/images/icons/6.png',
+    title: 'Proyecto de red eléctrica',
+  },
+  {
+    id: 7,
+    icon: '/images/icons/7.png',
+    title: 'Proyecto de red de gas natural',
+  },
+  {
+    id: 8,
+    icon: '/images/icons/8.png',
+    title: 'Dirección y conducción de obra',
+  },
+]
 
 const Services = () => {
   return (
-    <div id="servicios">
+    <section id='servicios'>
       <Heading>Servicios</Heading>
-      <StyledDiv>
-        {services.map((service) => (
-          <Card key={service.title} service={service} />
+      <ServicesIntro>
+        <p>Nuestra misión es acompañar al cliente en el proceso, nucleando todos los procesos técnicos y administrativos en un solo actor, y de esta forma, generar que los desarrollos inmobiliarios sean efectivos en su materialización y ágiles en el tiempo.</p>
+      </ServicesIntro>
+      <Subtitle>¿En qué te podemos ayudar?</Subtitle>
+      <ServicesContainer>
+        {services.map(service => (
+          <Service
+            key={service.id}
+            id={service.id}
+            icon={service.icon}
+            title={service.title}
+            variant='button'
+          />
         ))}
-      </StyledDiv>
-    </div>
-  );
-};
+      </ServicesContainer>
+    </section>
+  )
+}
 
 const Heading = styled.h2`
   text-align: center;
@@ -46,7 +75,7 @@ const Heading = styled.h2`
   position: relative;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     right: 0;
@@ -60,13 +89,31 @@ const Heading = styled.h2`
       display: none;
     }
   }
-`;
+`
 
-const StyledDiv = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+const ServicesContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, max-content));
+  grid-gap: 4rem;
   justify-content: center;
-  gap: 2rem;
-`;
+`
 
-export default Services;
+const ServicesIntro = styled.div`
+  font-size: 20px;
+  font-family: MullerLightItalic;
+  border-left: 3px solid var(--green);
+  padding-left: 1rem;
+  max-width: 900px;
+  margin-inline: auto;
+  margin-top: 4rem;
+`
+
+const Subtitle = styled.h3`
+  color: var(--green);
+  text-align: center;
+  font-size: 24px;
+  font-family: MullerBold;
+  margin-block: 4rem;
+`
+
+export default Services
