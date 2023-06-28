@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { AiFillQuestionCircle } from "react-icons/ai";
-import MainButton from "../Buttons/MainButton";
 
-const Service = ({ icon, title, variant = "", body = "" }) => {
+const Service = ({ id, icon, title, variant = "", body = "" }) => {
   return (
     <Container
       className={`${
@@ -26,7 +25,7 @@ const Service = ({ icon, title, variant = "", body = "" }) => {
       </StyledTitle>
       {variant === "button" ? (
         <Button className="bg-gray">
-          <Link to="/servicios" className="font-regular">
+          <Link to={`/servicios/${id}`} className="font-regular">
             Más información
           </Link>
         </Button>
@@ -64,12 +63,19 @@ const Button = styled.button`
   color: white;
   border: none;
   width: fit-content;
+  padding-block: 0.75em;
   margin-inline: auto;
-  padding: 0.75em 3em;
   transition: all 300ms;
+  border-radius: 20px;
 
   &:hover {
     opacity: 0.5;
+  }
+
+  & > * {
+    color: white;
+    padding: 0.75em 3em;
+    border-radius: 20px;
   }
 `;
 

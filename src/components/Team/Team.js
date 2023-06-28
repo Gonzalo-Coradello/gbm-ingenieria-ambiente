@@ -2,21 +2,21 @@ import styled from "styled-components"
 
 const Team = () => {
   return (
-    <>
+    <div>
       <Heading>Nuestro equipo</Heading>
       <Flex>
         <div>
-          <img src="/images/team/profile.png" alt="Foto de Gabriel" />
+          <img src="/images/team/gabriel.png" alt="Foto de Gabriel" />
           <h4>Gabriel Battocchia</h4>
           <p className="font-light-italic">Ingeniero civil</p>
         </div>
         <div>
-          <img src="/images/team/profile.png" alt="Foto de Gonzalo" />
+          <img src="/images/team/gonzalo.png" alt="Foto de Gonzalo" />
           <h4>Gonzalo Martínez</h4>
           <p className="font-light-italic">Lic. en Gestión ambiental</p>
         </div>
       </Flex>
-    </>
+    </div>
   )
 }
 
@@ -28,7 +28,7 @@ const Heading = styled.h2`
 `;
 
 const Flex = styled.div`
-  max-width: 700px;
+  max-width: 800px;
   margin-inline: auto;
   display: flex;
   flex-direction: column;

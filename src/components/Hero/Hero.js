@@ -32,8 +32,9 @@ const Section = styled.section`
     position: absolute;
     top: 0;
     right: 0;
-    max-width: 650px;
-    padding: 6rem 4rem;
+    max-width: 520px;
+    padding: 6rem 1rem;
+    text-align: center;
 
     @media(max-width: 700px) {
       height: 100%;
@@ -56,6 +57,7 @@ const Section = styled.section`
   & p {
     margin-top: 1rem;
     margin-bottom: 2rem;
+    padding-inline: 4rem;
   }
 
   & img {
@@ -63,6 +65,7 @@ const Section = styled.section`
     object-fit: cover;
     height: 100%;
     overflow: hidden;
+    padding-bottom: 2.5rem;
   }
 `
 
@@ -79,11 +82,10 @@ const Filter = styled.span`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #FFF5;
+  background-color: #FFF1;
 
   @media(max-width: 700px) {
-    background-color: #FFF8;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(2px);
   }
 
 `
