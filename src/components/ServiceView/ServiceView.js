@@ -3,10 +3,11 @@ import styled from 'styled-components'
 import { Link, useParams } from 'react-router-dom'
 import MainButton from '../Buttons/MainButton'
 import { services } from '../Services/Services'
+import Heading from '../Heading/Heading'
 
 export const ServiceView = () => {
   const params = useParams()
-  const { icon, title } = services.find(s => s.id === +params.id)
+  const { icon, title, description } = services.find(s => s.id === +params.id)
 
   return (
     <StyledServices className='m-auto'>
@@ -15,15 +16,23 @@ export const ServiceView = () => {
           <Filter />
           <StyledImg src='/images/services/excavacion.jpg' alt='Excavación' />
         </StyledDivImg>
-        <h1>{title}</h1>
+        <HeadingContainer>
+          <Heading line='right'>{title}</Heading>
+        </HeadingContainer>
+        <div>
         <img src={icon} alt={title} width={50} />
+        <p>{description}</p>
+        </div>
+        
         <p className='text-center p-0'>
           Si requiere atención personalizada, costos, valoración de sus
           proyectos, favor de ponerse en contacto con nosotros.
         </p>
-        <MainButton>
-          <Link to='/#contacto'>Contactá con nosotros</Link>
-        </MainButton>
+        <div className='mx-auto'>
+          <MainButton>
+            <Link to='/#contacto'>Contactá con nosotros</Link>
+          </MainButton>
+        </div>
       </div>
     </StyledServices>
   )
@@ -46,6 +55,13 @@ const StyledImg = styled.img`
 //   padding: 0 10px;
 //   border-left: 3px solid var(--green);
 // `
+
+const HeadingContainer = styled.div`
+  position: absolute;
+  right: 0;
+  width: 100%;
+  top: 200px;
+`
 
 const StyledDivImg = styled.div`
   height: 300px;

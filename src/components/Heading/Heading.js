@@ -36,6 +36,7 @@ const HeadingLeft = styled.div`
     width: 22rem;
     margin-inline: auto;
     text-align: left;
+    white-space: nowrap;
   }
 
   &::before {
@@ -70,6 +71,7 @@ const HeadingRight = styled.div`
     width: 22rem;
     margin-inline: auto;
     text-align: right;
+    white-space: nowrap;
   }
 
   &::after {
