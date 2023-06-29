@@ -5,10 +5,10 @@
 - ~~Hero. Cambiar foto y modificar estilos.~~
 - ~~Servicios. Incluir todos en la página principal. Agregar frase.~~
 - ~~Convertir página de Servicios en página de Servicio.~~
+- ~~Agregar línea a todos los títulos~~
 - Quiénes somos. Modificar texto y agregar logo.
 - Proyectos. Cambiar fotos y estilos.
 - Proyectos. Crear modal para abrir fotos.
 - Dar estilos a ServiceView.
 - Crear página Nosotros.
-- Agregar línea a todos los títulos
 - Cambiar el email en emailJS (Gonza Ramos)
