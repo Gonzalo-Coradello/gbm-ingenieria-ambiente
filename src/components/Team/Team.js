@@ -1,9 +1,10 @@
 import styled from "styled-components"
+import Heading from "../Heading/Heading"
 
 const Team = () => {
   return (
     <div>
-      <Heading>Nuestro equipo</Heading>
+      <Heading line='right'>Nuestro equipo</Heading>
       <Flex>
         <div>
           <img src="/images/team/gabriel.png" alt="Foto de Gabriel" />
@@ -19,13 +20,6 @@ const Team = () => {
     </div>
   )
 }
-
-const Heading = styled.h2`
-  font-size: 36px;
-  color: var(--green);
-  text-align: center;
-  margin-bottom: 2.8rem;
-`;
 
 const Flex = styled.div`
   max-width: 800px;

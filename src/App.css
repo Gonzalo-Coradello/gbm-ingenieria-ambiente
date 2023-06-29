@@ -43,6 +43,7 @@ list-style: none;
 
 body{
   font-family: MullerRegular;
+  overflow-x: hidden;
 }
 
 h1,

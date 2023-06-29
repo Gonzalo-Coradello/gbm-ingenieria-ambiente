@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import MainButton from "../Buttons/MainButton";
+import Heading from "../Heading/Heading";
 
 const About = () => {
   return (
     <div id="about">
-      <Heading>Quiénes somos</Heading>
+      <Heading line='left'>Quiénes somos</Heading>
       <StyledDiv>
         <p className="font-italic">
           Grupo GBM, es una consultora, constructora y desarrolladora de
@@ -24,30 +25,6 @@ const About = () => {
     </div>
   );
 };
-
-const Heading = styled.h2`
-    text-align: center;
-    color: var(--green);
-    font-size: 36px;
-    position: relative;
-    margin-bottom: 2.8rem;
-
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 0;
-        height: 5px;
-        width: 28.5vw;
-        background-color: var(--green);
-    }
-
-    @media (max-width: 650px) {
-      &::before {
-          display: none;
-      }
-`;
 
 const StyledDiv = styled.div`
   max-width: 70ch;

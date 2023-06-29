@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Service from '../Service/Service'
+import Heading from '../Heading/Heading'
 
 export const services = [
   {
@@ -47,7 +48,7 @@ export const services = [
 const Services = () => {
   return (
     <section id='servicios'>
-      <Heading>Servicios</Heading>
+      <Heading line='right'>Servicios</Heading>
       <ServicesIntro>
         <p>Nuestra misión es acompañar al cliente en el proceso, nucleando todos los procesos técnicos y administrativos en un solo actor, y de esta forma, generar que los desarrollos inmobiliarios sean efectivos en su materialización y ágiles en el tiempo.</p>
       </ServicesIntro>
@@ -66,30 +67,6 @@ const Services = () => {
     </section>
   )
 }
-
-const Heading = styled.h2`
-  text-align: center;
-  color: var(--green);
-  font-size: 36px;
-  margin-bottom: 2.8rem;
-  position: relative;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: 0;
-    height: 5px;
-    width: 32vw;
-    background-color: var(--green);
-  }
-
-  @media (max-width: 650px) {
-    &::after {
-      display: none;
-    }
-  }
-`
 
 const ServicesContainer = styled.div`
   display: grid;

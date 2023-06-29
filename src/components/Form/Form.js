@@ -8,6 +8,7 @@ import emailjs from "@emailjs/browser";
 import { useRef } from "react";
 import { DotPulse } from "@uiball/loaders";
 import React, { useState } from "react";
+import Heading from "../Heading/Heading";
 
 const iconStyle = {
   fontSize: "2.5rem",
@@ -75,7 +76,7 @@ const Form = () => {
 
   return (
     <div id="contacto">
-      <Heading>Contacto</Heading>
+      <Heading line='left'>Contacto</Heading>
       {/* 2 SECTIONS CONTAINER (INFO & FORM) */}
       <div className="col-12 d-flex flex-wrap gap-4 gap-md-0 m-auto">
         {/* INFO */}
@@ -176,30 +177,6 @@ const Form = () => {
     </div>
   );
 };
-
-const Heading = styled.h2`
-  text-align: center;
-  color: var(--green);
-  font-size: 36px;
-  margin-bottom: 2.8rem;
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    height: 5px;
-    width: 32vw;
-    background-color: var(--green);
-  }
-
-  @media (max-width: 650px) {
-    &::before {
-      display: none;
-    }
-  }
-`;
 
 const StyledInput = styled.input`
   border: none;
