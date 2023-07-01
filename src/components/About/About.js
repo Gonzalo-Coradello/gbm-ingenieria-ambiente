@@ -8,7 +8,7 @@ const About = () => {
       <Heading line='left'>Quiénes somos</Heading>
       <StyledDiv>
         <p className="font-italic">
-          Grupo GBM, es una consultora, constructora y desarrolladora de
+          Grupo GBM es una consultora, constructora y desarrolladora de
           proyectos inmobiliarios, de comercio y sector industrial tanto
           públicos como privados.
         </p>
