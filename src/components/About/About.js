@@ -1,11 +1,15 @@
 import styled from "styled-components";
 import MainButton from "../Buttons/MainButton";
 import Heading from "../Heading/Heading";
+import Logo from "../Logo/Logo"
 
 const About = () => {
   return (
     <div id="about">
       <Heading line='left'>Quiénes somos</Heading>
+      <LogoContainer>
+        <Logo width={243} />
+      </LogoContainer>
       <StyledDiv>
         <p className="font-italic">
           Grupo GBM es una consultora, constructora y desarrolladora de
@@ -42,5 +46,11 @@ const ButtonContainer = styled.div`
   @media (min-width: 650px) {
     justify-content: end;
 `;
+
+const LogoContainer = styled.div`
+  width: fit-content;
+  margin-inline: auto;
+  margin-block: 3.5rem;
+`
 
 export default About;
