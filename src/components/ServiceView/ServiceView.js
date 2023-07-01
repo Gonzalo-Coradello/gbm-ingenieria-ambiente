@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import MainButton from '../Buttons/MainButton'
 import { services } from '../Services/Services'
 import Heading from '../Heading/Heading'
+import { BsChevronLeft } from 'react-icons/bs'
 
 export const ServiceView = () => {
   const params = useParams()
@@ -11,7 +12,7 @@ export const ServiceView = () => {
 
   return (
     <StyledServices className='m-auto'>
-      <div className='d-flex flex-column gap-5'>
+      <div className='d-flex flex-column gap-3'>
         <StyledDivImg>
           <Filter />
           <StyledImg src='/images/services/excavacion.jpg' alt='Excavación' />
@@ -19,15 +20,20 @@ export const ServiceView = () => {
         <HeadingContainer>
           <Heading line='right'>{title}</Heading>
         </HeadingContainer>
-        <div>
-        <img src={icon} alt={title} width={50} />
-        <p>{description}</p>
-        </div>
-        
-        <p className='text-center p-0'>
-          Si requiere atención personalizada, costos, valoración de sus
-          proyectos, favor de ponerse en contacto con nosotros.
-        </p>
+          <a href='/#servicios'>
+            <BsChevronLeft size={50} color='var(--green)' />
+          </a>
+        <Body>
+          <img src={icon} alt={title} width={50} />
+          <p>{description}</p>
+        </Body>
+
+        <StyledParagraph className='text-center p-0'>
+          <span>
+            Si requiere atención personalizada, costos, valoración de sus
+            proyectos, favor de ponerse en contacto con nosotros.
+          </span>
+        </StyledParagraph>
         <div className='mx-auto'>
           <MainButton>
             <Link to='/#contacto'>Contactá con nosotros</Link>
@@ -78,5 +84,45 @@ const Filter = styled.span`
   backdrop-filter: blur(2px);
   @media (max-width: 700px) {
     background-color: #fff8;
+  }
+`
+
+const Body = styled.div`
+  position: relative;
+  font-size: 26px;
+  width: 80%;
+  max-width: 710px;
+  margin-inline: auto;
+  line-height: 1.2;
+
+  & img {
+    position: absolute;
+    width: 50px;
+    top: -68px;
+    left: calc(50% - 25px);
+  }
+
+  @media(min-width: 1100px) {
+    & img {
+      position: absolute;
+      width: 100px;
+      top: 25%;
+      left: -145px;
+    }
+  }
+
+`
+
+const StyledParagraph = styled.p`
+  font-size: 15px;
+  border-top: 2px solid var(--green);
+  width: fit-content;
+  margin-inline: auto;
+  margin-top: 4.5rem;
+
+  & span {
+    display: block;
+    padding-top: 1rem;
+    padding-inline: 1rem;
   }
 `

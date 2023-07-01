@@ -7,8 +7,8 @@
 - ~~Convertir página de Servicios en página de Servicio.~~
 - ~~Agregar línea a todos los títulos~~
 - ~~Proyectos. Cambiar fotos y estilos.~~
-- Quiénes somos. Modificar texto y agregar logo.
+- ~~Quiénes somos. Modificar texto y agregar logo.~~
+- ~~Dar estilos a ServiceView.~~
 - Proyectos. Crear modal para abrir fotos.
-- Dar estilos a ServiceView.
 - Crear página Nosotros.
 - Cambiar el email en emailJS (Gonza Ramos)
