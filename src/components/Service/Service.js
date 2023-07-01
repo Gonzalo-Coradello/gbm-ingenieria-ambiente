@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { AiFillQuestionCircle } from "react-icons/ai";
 
@@ -25,9 +25,9 @@ const Service = ({ id, icon, title, variant = "", body = "" }) => {
       </StyledTitle>
       {variant === "button" ? (
         <Button className="bg-gray">
-          <Link to={`/servicios/${id}`} className="font-regular">
+          <a href={`/servicios/${id}`} className="font-regular">
             Más información
-          </Link>
+          </a>
         </Button>
       ) : (
         <ServiceText className="px-3 px-lg-0">{body}</ServiceText>
