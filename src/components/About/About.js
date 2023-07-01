@@ -24,7 +24,9 @@ const About = () => {
         </p>
       </StyledDiv>
       <ButtonContainer>
-        <MainButton size="large">Saber más</MainButton>
+        <a href="/nosotros">
+          <MainButton size="large">Saber más</MainButton>
+        </a>
       </ButtonContainer>
     </div>
   );
