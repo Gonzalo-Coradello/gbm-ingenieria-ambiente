@@ -42,7 +42,6 @@ const Section = styled.section`
       align-items: center;
       padding: 2rem;
       text-align: center;
-      
     }
   }
 
@@ -65,7 +64,10 @@ const Section = styled.section`
     object-fit: cover;
     height: 100%;
     overflow: hidden;
-    padding-bottom: 2.5rem;
+
+    @media(min-width:700px) {
+      padding-bottom: 2.5rem;
+    }
   }
 `
 
