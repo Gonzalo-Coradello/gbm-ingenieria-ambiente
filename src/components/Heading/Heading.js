@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Heading = ({ line, children }) => {
+export const Heading = ({ line, children }) => {
   if (line === "left") {
     return (
       <HeadingLeft>
@@ -87,5 +87,3 @@ const HeadingRight = styled.div`
     }
   }
 `;
-
-export default Heading;

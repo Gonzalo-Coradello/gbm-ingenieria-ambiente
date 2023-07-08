@@ -130,34 +130,6 @@ color: #ffffff;
   scroll-margin-top: 85px;
 }
 
-.bor-1r {
-border: 3px solid red;
-}
-
-.bor-1b {
-  border: 3px solid blue;
-}
-
-.bor-1g {
-  border: 3px solid green;
-}
-
-.bor-2r {
-  border: 6px solid red;
-}
-    
-.bor-2b {
-  border: 6px solid blue;
-}
-
-.bor-2g {
-  border: 6px solid green;
-}
-
-.bor-2y {
-  border: 6px solid purple;
-}
-
 .btn-primary {
   background-color: var(--green);
   color: #fff;
@@ -194,3 +166,4 @@ border: 3px solid red;
 .serviceSecondary {
   width: 300px;
 }
+

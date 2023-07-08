@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Heading from "../Heading/Heading";
+import { Heading } from "../index";
 
 export const AboutUs = () => {
   return (

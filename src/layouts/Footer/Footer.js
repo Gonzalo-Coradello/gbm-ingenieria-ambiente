@@ -1,8 +1,8 @@
 import React from "react";
+import { MainButton } from "../../components/index";
+import styled from "styled-components";
 import { AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
 import { FaLinkedinIn, FaFacebookF } from "react-icons/fa";
-import MainButton from "../../components/Buttons/MainButton";
-import styled from "styled-components";
 import logo from "./assets/white-logo.png";
 
 function Footer() {
@@ -28,10 +28,10 @@ function Footer() {
           <img width={148} src={logo} alt="GBM Ingenieria y ambiente" />
         </div>
         <div>
+          <p className="m-0 text-center font-regular">Mendoza, Argentina</p>
           <p className="m-0 text-center font-regular">
-            Mendoza, Argentina
+            +54 9 2604686063 / 2604560911
           </p>
-          <p className="m-0 text-center font-regular">+54 9 2604686063 / 2604560911</p>
         </div>
       </FooterBox>
       {/* 2 */}

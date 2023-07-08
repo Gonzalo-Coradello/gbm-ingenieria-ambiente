@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link, useParams } from "react-router-dom";
-import MainButton from "../Buttons/MainButton";
-import { services } from "../Services/Services";
-import Heading from "../Heading/Heading";
+import { Heading, services, MainButton } from "../index";
 import { BsChevronLeft } from "react-icons/bs";
 
 export const ServiceView = () => {

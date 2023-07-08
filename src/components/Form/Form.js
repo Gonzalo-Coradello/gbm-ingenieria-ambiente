@@ -1,14 +1,12 @@
-import styled from "styled-components";
-import { MdLocationOn, MdPhone } from "react-icons/md";
-import { IoMdMail } from "react-icons/io";
-import MainButton from "../Buttons/MainButton";
-import { useForm } from "react-hook-form";
-import { ToastContainer, toast } from "react-toastify";
+import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
+import styled from "styled-components";
+import { useForm } from "react-hook-form";
+import { MainButton, Heading } from "../index";
+import { IoMdMail } from "react-icons/io";
+import { MdLocationOn, MdPhone } from "react-icons/md";
 import { DotPulse } from "@uiball/loaders";
-import React, { useState } from "react";
-import Heading from "../Heading/Heading";
+import { ToastContainer, toast } from "react-toastify";
 
 const iconStyle = {
   fontSize: "2.5rem",
@@ -45,7 +43,7 @@ const errorToast = (errorMsg) => {
   );
 };
 
-const Form = () => {
+export const Form = () => {
   const [isSending, setIsSending] = useState(false);
   const form = useRef();
   const { register, handleSubmit, reset } = useForm();
@@ -75,7 +73,7 @@ const Form = () => {
   };
 
   return (
-    <div id="contacto">
+    <div id="contacto" className="bor-2y px-2">
       <Heading line="left">Contacto</Heading>
       {/* 2 SECTIONS CONTAINER (INFO & FORM) */}
       <div className="col-12 d-flex flex-wrap gap-4 gap-md-0 m-auto">
@@ -228,12 +226,3 @@ const SubmitSection = styled.div`
     }
   }
 `;
-
-export default Form;
-
-// Trabajado por Gonzalo Ramos
-
-/*
- 
-
- */

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Logo from "../../components/Logo/Logo";
-import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
+import "./Navbar.css";
+import { Logo } from "../../components/index";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);

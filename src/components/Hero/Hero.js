@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import MainButton from "../Buttons/MainButton";
+import { MainButton } from "../index";
 
-const Hero = () => {
+export const Hero = () => {
   return (
-    <Section className="bor-2b">
+    <Section>
       <Filter />
-      <div className="bor-2y">
+      <div>
         <div className="clr-green">
-          <h1 className="font-medium bor-2r">Acompañamos tu desarrollo</h1>
+          <h1 className="font-medium">Acompañamos tu desarrollo</h1>
           <p>
             Somos una consultora de jóvenes profesionales. Nos dedicamos a la
             asesoría, gestión y diseño de proyectos inmobiliarios para grupos
@@ -34,7 +34,6 @@ const Section = styled.section`
 
   & > div {
     position: absolute;
-    border: 5px thick saddlebrown;
     top: 0;
     right: 0;
     max-width: 520px;
@@ -45,7 +44,7 @@ const Section = styled.section`
       height: 100%;
       display: grid;
       align-items: center;
-      padding: 2rem;
+      padding: 2em;
       text-align: center;
     }
   }
@@ -58,9 +57,8 @@ const Section = styled.section`
   }
 
   & p {
-    border: 3px solid yellow;
     margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     padding-inline: 2rem;
     @media (min-width: 700px) {
       padding-inline: 4rem;
@@ -98,5 +96,3 @@ const Filter = styled.span`
     backdrop-filter: blur(2px);
   }
 `;
-
-export default Hero;
