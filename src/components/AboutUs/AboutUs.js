@@ -21,7 +21,7 @@ export const AboutUs = () => {
           perfectas para tu proyecto.
         </h5>
       </div>
-      <AboutUsInfo className="d-flex flex-column justify-content-center flex-lg-row justify-content-center col-12">
+      <AboutUsInfo className="d-flex flex-column justify-content-center flex-lg-row justify-content-lg-center align-items-center col-12">
         <div className="col-12 col-lg-5 py-2 px-3 px-lg-4 d-flex flex-column justify-content-center">
           <Subtitle className="py-2 py-lg-0 pb-lg-2">¿Quíenes somos?</Subtitle>
           <p className="p-0">
@@ -39,7 +39,7 @@ export const AboutUs = () => {
           </p>
         </div>
 
-        <StyledDivImg className="m-auto col-11 col-lg-5">
+        <StyledDivImg className="col-11 col-lg-5">
           <AboutUsImage src="/images/projects/foto14.png" alt="Excavación" />
         </StyledDivImg>
       </AboutUsInfo>
