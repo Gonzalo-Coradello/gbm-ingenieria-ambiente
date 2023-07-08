@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const navbarLinks = [
     { ref: "/nosotros", slug: "Nosotros" },
@@ -17,7 +17,7 @@ const Navbar = () => {
     <header>
       {/* Menu mobile */}
       <nav className="d-sm-none position-fixed fixed-top-0 container-lg py-3 px-3 d-flex justify-content-between align-items-sm-center">
-        <div onClick={() => navigate('/')} role='button' >
+        <div onClick={() => navigate("/")} role="button">
           <Logo />
         </div>
         <div>
@@ -60,9 +60,9 @@ const Navbar = () => {
       {/* Menu desktop */}
       <nav className="d-none d-sm-flex position-fixed fixed-top-0 w-100">
         <div className="container-lg py-3 px-3 d-flex justify-content-between align-items-sm-center">
-        <div onClick={() => navigate('/')} role='button' >
-          <Logo />
-        </div>
+          <div onClick={() => navigate("/")} role="button">
+            <Logo />
+          </div>
           <div className="pt-2">
             <ul className="d-flex gap-4">
               {navbarLinks.map((link) => (

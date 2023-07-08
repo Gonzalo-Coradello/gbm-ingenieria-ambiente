@@ -154,6 +154,10 @@ border: 3px solid red;
   border: 6px solid green;
 }
 
+.bor-2y {
+  border: 6px solid purple;
+}
+
 .btn-primary {
   background-color: var(--green);
   color: #fff;

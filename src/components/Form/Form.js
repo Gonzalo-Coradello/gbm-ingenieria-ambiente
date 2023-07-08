@@ -76,7 +76,7 @@ const Form = () => {
 
   return (
     <div id="contacto">
-      <Heading line='left'>Contacto</Heading>
+      <Heading line="left">Contacto</Heading>
       {/* 2 SECTIONS CONTAINER (INFO & FORM) */}
       <div className="col-12 d-flex flex-wrap gap-4 gap-md-0 m-auto">
         {/* INFO */}
