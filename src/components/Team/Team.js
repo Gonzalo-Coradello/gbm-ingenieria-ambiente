@@ -1,10 +1,10 @@
-import styled from "styled-components"
-import Heading from "../Heading/Heading"
+import styled from "styled-components";
+import { Heading } from "../index";
 
-const Team = () => {
+export const Team = () => {
   return (
     <div>
-      <Heading line='right'>Nuestro equipo</Heading>
+      <Heading line="right">Nuestro equipo</Heading>
       <Flex>
         <div>
           <img src="/images/team/gabriel.png" alt="Foto de Gabriel" />
@@ -18,8 +18,8 @@ const Team = () => {
         </div>
       </Flex>
     </div>
-  )
-}
+  );
+};
 
 const Flex = styled.div`
   max-width: 800px;
@@ -40,11 +40,9 @@ const Flex = styled.div`
   & p {
     font-size: 15px;
   }
-  
 
   @media (min-width: 500px) {
     flex-direction: row;
-
   }
 
   & img {
@@ -56,6 +54,4 @@ const Flex = styled.div`
     object-fit: cover;
     object-position: top center;
   }
-`
-
-export default Team
+`;

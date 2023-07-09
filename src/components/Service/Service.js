@@ -2,7 +2,7 @@
 import styled from "styled-components";
 import { AiFillQuestionCircle } from "react-icons/ai";
 
-const Service = ({ id, icon, title, variant = "", body = "" }) => {
+export const Service = ({ id, icon, title, variant = "", body = "" }) => {
   return (
     <Container
       className={`${
@@ -92,4 +92,3 @@ const IconStyled = styled.div`
   }
 `;
 
-export default Service;

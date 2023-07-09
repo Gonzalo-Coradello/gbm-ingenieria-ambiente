@@ -1,4 +1,5 @@
 ### Cosas para hacer
+
 - ~~Navbar. Cambiar Links.~~
 - ~~Actualizar información de contacto en formulario y footer.~~
 - ~~Cambiar fotos de Gabriel y Gonzalo.~~

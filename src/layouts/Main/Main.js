@@ -1,11 +1,13 @@
-import About from "../../components/About/About";
-import Hero from "../../components/Hero/Hero";
-import Team from "../../components/Team/Team";
-import Projects from "../../components/Projects/Projects";
-import Form from "../../components/Form/Form";
 import styled from "styled-components";
 import "react-toastify/dist/ReactToastify.css";
-import Services from "../../components/Services/Services";
+import {
+  Hero,
+  About,
+  Team,
+  Projects,
+  Form,
+  Services,
+} from "../../components/index";
 
 const Main = () => {
   return (
@@ -21,15 +23,15 @@ const Main = () => {
 };
 
 const StyledMain = styled.main`
-padding-top: 5.3rem;
+  padding-top: 5.3rem;
 
-& > * {
-  max-width: 1110px;
-  margin-inline: auto;
-}
+  & > * {
+    max-width: 1110px;
+    margin-inline: auto;
+  }
 
-& > * {
-  margin-bottom: 5rem;
+  & > * {
+    margin-bottom: 5rem;
   }
 `;
 

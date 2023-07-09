@@ -1,29 +1,22 @@
 import styled from "styled-components";
 
-const Heading = ({ line, children }) => {
-
-  if(line === 'left') {
+export const Heading = ({ line, children }) => {
+  if (line === "left") {
     return (
       <HeadingLeft>
-        <h2>
-          {children}
-        </h2>
+        <h2>{children}</h2>
       </HeadingLeft>
-    )
-  } else if(line === 'right') {
+    );
+  } else if (line === "right") {
     return (
       <HeadingRight>
         <h2>{children}</h2>
       </HeadingRight>
-    )
+    );
   }
 
-  return (
-    <h2>
-      { children }
-    </h2>
-  )
-}
+  return <h2>{children}</h2>;
+};
 
 const HeadingLeft = styled.div`
   text-align: center;
@@ -75,7 +68,7 @@ const HeadingRight = styled.div`
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     right: -22vw;
@@ -93,6 +86,4 @@ const HeadingRight = styled.div`
       width: fit-content;
     }
   }
-`
-
-export default Heading
+`;
