@@ -1,22 +1,22 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Heading = ({ line, children }) => {
-  if (line === "left") {
+  if (line === 'left') {
     return (
       <HeadingLeft>
         <h2>{children}</h2>
       </HeadingLeft>
-    );
-  } else if (line === "right") {
+    )
+  } else if (line === 'right') {
     return (
       <HeadingRight>
         <h2>{children}</h2>
       </HeadingRight>
-    );
+    )
   }
 
-  return <h2>{children}</h2>;
-};
+  return <h2>{children}</h2>
+}
 
 const HeadingLeft = styled.div`
   text-align: center;
@@ -33,12 +33,13 @@ const HeadingLeft = styled.div`
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     left: -22vw;
     height: 5px;
     width: 46vw;
+    max-width: 750px;
     background-color: var(--green);
   }
 
@@ -51,7 +52,17 @@ const HeadingLeft = styled.div`
       width: fit-content;
     }
   }
-`;
+
+  @media (min-width: 1980px) {
+    &::before {
+      display: none;
+    }
+    & h2 {
+      text-align: center;
+      width: fit-content;
+    }
+  }
+`
 
 const HeadingRight = styled.div`
   text-align: center;
@@ -68,12 +79,13 @@ const HeadingRight = styled.div`
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     right: -22vw;
     height: 5px;
     width: 46vw;
+    max-width: 750px;
     background-color: var(--green);
   }
 
@@ -86,4 +98,14 @@ const HeadingRight = styled.div`
       width: fit-content;
     }
   }
-`;
+
+  @media (min-width: 1980px) {
+    &::after {
+      display: none;
+    }
+    & h2 {
+      text-align: center;
+      width: fit-content;
+    }
+  }
+`
