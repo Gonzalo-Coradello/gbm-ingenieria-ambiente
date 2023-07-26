@@ -18,7 +18,7 @@ export const MainButton = (props) => {
     <StyledButton
       className={`font-bold ${
         props.type === "secondary" ? `btn-primary` : `btn-secondary`
-      }`}
+      } ${props.inactive ? "formInactiveBtn" : ""}`}
       style={
         props.size === "small"
           ? smallStyle
