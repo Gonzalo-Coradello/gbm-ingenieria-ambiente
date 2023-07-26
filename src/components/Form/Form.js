@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
@@ -45,31 +45,91 @@ const errorToast = (errorMsg) => {
 
 export const Form = () => {
   const [isSending, setIsSending] = useState(false);
-  const form = useRef();
   const { register, handleSubmit, reset } = useForm();
 
+  const [userNameCompleted, setUserNameCompleted] = useState(false);
+  const [surnameCompleted, setSurnameCompleted] = useState(false);
+  const [userEmailCompleted, setUserEmailCompleted] = useState(false);
+  const [mailSubjectCompleted, setMailSubjectCompleted] = useState(false);
+  const [mailBodyCompleted, setMailBodyCompleted] = useState(false);
+  const [canSend, setCanSend] = useState(false);
+  const form = useRef();
+
   // SUBMIT FUNCTION
-  const onSubmit = () => {
+  const onSubmit = (data) => {
     setIsSending(true);
     emailjs
-      .sendForm(
-        "service_4thn52g",
-        "template_6szii3d",
-        form.current,
-        "hngfXkj4dqbpXlBAg"
-      )
+      .send("service_tmmrvqf", "template_6szii3d", data, "hngfXkj4dqbpXlBAg")
       .then(
         () => {
-          // OK OUT
           reset();
           succeessToast();
           setIsSending(false);
+          setCanSend(false);
+          setUserNameCompleted((prevState) => !prevState);
+          setSurnameCompleted((prevState) => !prevState);
+          setUserEmailCompleted((prevState) => !prevState);
+          setMailSubjectCompleted((prevState) => !prevState);
+          setMailBodyCompleted((prevState) => !prevState);
         },
         (error) => {
           // ERROR OUT
           errorToast(error.text);
         }
       );
+  };
+
+  const handleColor = (e) => {
+    let { id } = e.target;
+    id = Number(id);
+    if (e.target.value !== "") {
+      switch (id) {
+        case 1:
+          setUserNameCompleted(true);
+          break;
+        case 2:
+          setSurnameCompleted(true);
+          break;
+        case 3:
+          setUserEmailCompleted(true);
+          break;
+        case 4:
+          setMailSubjectCompleted(true);
+          break;
+        case 5:
+          setMailBodyCompleted(true);
+          break;
+      }
+    } else {
+      switch (id) {
+        case 1:
+          setUserNameCompleted((prevState) => !prevState);
+          break;
+        case 2:
+          setSurnameCompleted((prevState) => !prevState);
+          break;
+        case 3:
+          setUserEmailCompleted((prevState) => !prevState);
+          break;
+        case 4:
+          setMailSubjectCompleted((prevState) => !prevState);
+          break;
+        case 5:
+          setMailBodyCompleted((prevState) => !prevState);
+          break;
+      }
+    }
+    let allCompleted =
+      userNameCompleted &&
+      surnameCompleted &&
+      userEmailCompleted &&
+      mailSubjectCompleted &&
+      mailBodyCompleted;
+    if (allCompleted) {
+      setCanSend(true);
+    } else {
+      setCanSend(false);
+    }
   };
 
   return (
@@ -113,54 +173,87 @@ export const Form = () => {
         {/* FORM */}
         <div className="col-11 col-md-6 col-lg-7 m-auto">
           <form
+            ref={form}
             className="d-flex flex-column gap-4"
             onSubmit={handleSubmit(onSubmit)}
-            ref={form}
           >
             <div className="d-flex justify-content-between flex-column flex-sm-row gap-4 gap-sm-0">
               <StyledInput
+                required
+                id="1"
                 type="text"
                 placeholder="Nombre"
-                className="col-12 col-sm-5"
-                {...register("name")}
-                required
+                className={`col-12 col-sm-5 ${
+                  userNameCompleted ? "formCompleted" : "col-1"
+                }`}
+                {...register("name", {
+                  onChange: (e) => {
+                    handleColor(e);
+                  },
+                })}
               />
               <StyledInput
+                required
+                id="2"
                 type="text"
                 placeholder="Apellido"
-                className="col-12 col-sm-5"
-                {...register("surname")}
-                required
+                className={`col-12 col-sm-5 ${
+                  surnameCompleted ? "formCompleted" : ""
+                }`}
+                {...register("surname", {
+                  onChange: (e) => {
+                    handleColor(e);
+                  },
+                })}
               />
             </div>
             <div>
               <StyledInput
+                required
+                id="3"
                 type="email"
                 placeholder="Correo Electrónico"
-                className="col-12"
-                {...register("email")}
-                required
+                className={`col-12 ${
+                  userEmailCompleted ? "formCompleted" : ""
+                }`}
+                {...register("email", {
+                  onChange: (e) => {
+                    handleColor(e);
+                  },
+                })}
               />
             </div>
             <div>
               <StyledInput
+                required
+                id="4"
                 type="mail"
                 placeholder="Escribe aquí el asunto"
-                className="col-12"
-                {...register("subject")}
-                required
+                className={`col-12 ${
+                  mailSubjectCompleted ? "formCompleted" : ""
+                }`}
+                {...register("subject", {
+                  onChange: (e) => {
+                    handleColor(e);
+                  },
+                })}
               />
             </div>
             <div>
               <StyledTextarea
-                placeholder="Cuerpo del mensaje"
-                className="col-12"
-                {...register("message")}
                 required
+                id="5"
+                placeholder="Cuerpo del mensaje"
+                className={`col-12 ${mailBodyCompleted ? "formCompleted" : ""}`}
+                {...register("message", {
+                  onChange: (e) => {
+                    handleColor(e);
+                  },
+                })}
               />
             </div>
             <SubmitSection className={`m-auto ${isSending && "sendingBlock"}`}>
-              <MainButton type="secondary" submit="submit">
+              <MainButton type="secondary" submit="submit" inactive={!canSend}>
                 {isSending ? (
                   <DotPulse size={40} speed={1.3} color="#FBBC04" />
                 ) : (

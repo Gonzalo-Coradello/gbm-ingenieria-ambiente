@@ -167,3 +167,17 @@ color: #ffffff;
   width: 300px;
 }
 
+.formCompleted { 
+  background-color: #E8F0FD !important;
+  color: #000 !important;
+}
+
+.b1 {
+  border: 5px solid red;
+}
+
+.formInactiveBtn {
+ background-color: #3D7C53 !important;
+ color: #fff !important;
+}
+

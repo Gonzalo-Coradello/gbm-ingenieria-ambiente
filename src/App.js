@@ -4,6 +4,7 @@ import Navbar from "./layouts/Navbar/Navbar";
 import Main from "./layouts/Main/Main";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AboutUs, ServiceView } from "./components/index";
+import { ErrorPage } from "./layouts/ErrorPage/ErrorPage";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/servicios/:id" element={<ServiceView />} />
           <Route path="/nosotros" element={<AboutUs />} />
-          {/* TODO: <Route path="/*" element={<ErrorPage />}></Route> */}
+          TODO: <Route path="/*" element={<ErrorPage />}></Route>
         </Routes>
         <Footer />
       </div>
